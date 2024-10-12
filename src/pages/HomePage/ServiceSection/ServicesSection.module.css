@@ -183,16 +183,63 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 15px;
+    /* Espaço entre imagem e texto */
+    padding: 20px;
+    /* Padding menor para evitar espaços excessivos */
   }
 
   .serviceImage {
     margin-bottom: var(--spacing-small);
-    max-width: 100%;
+    max-width: 300px;
+    /* Limitar tamanho da imagem */
     width: 100%;
+    /* Imagem ocupa largura total disponível */
+    border-radius: 10px;
+    /* Bordas arredondadas */
   }
 
   .serviceText {
-    max-width: 100%;
+    max-width: 90%;
+    /* Limitar largura do texto */
     padding-left: 0;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceItem {
+    padding: 15px;
+    /* Padding mais compacto */
+    gap: 10px;
+    /* Menor espaçamento entre elementos */
+  }
+
+  .serviceImage {
+    max-width: 250px;
+    /* Reduzir tamanho da imagem */
+    margin-bottom: 10px;
+  }
+
+  .serviceTitle {
+    font-size: 22px;
+    /* Fonte menor para o título */
+    margin-bottom: 8px;
+  }
+
+  .serviceText {
+    font-size: 16px;
+    /* Ajustar fonte para leitura em telas pequenas */
+    line-height: 1.6;
+  }
+
+  .serviceButton {
+    width: 100%;
+    /* Botão ocupa largura total */
+    padding: 10px 0;
+    /* Padding otimizado */
+    font-size: 16px;
+    margin-top: 10px;
   }
 }

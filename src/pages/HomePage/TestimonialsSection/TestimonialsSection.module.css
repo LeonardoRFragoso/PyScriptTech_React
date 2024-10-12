@@ -143,9 +143,44 @@ blockquote {
   .testimonialsContainer {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    /* Espaço entre os depoimentos */
+  }
+
+  .testimonialItem {
+    max-width: 90%;
+    /* Reduzir um pouco a largura */
+    margin: 10px 0;
+    /* Espaçamento entre itens */
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+  .testimonialsContainer {
+    gap: 15px;
+    /* Espaçamento menor em telas pequenas */
   }
 
   .testimonialItem {
     max-width: 100%;
+    /* Ocupa toda a largura disponível */
+    padding: 15px;
+    /* Reduz o padding interno */
+  }
+
+  .testimonialAvatar {
+    width: 120px;
+    /* Redução do tamanho do avatar */
+    height: 120px;
+    margin-bottom: 8px;
+    /* Espaço reduzido abaixo do avatar */
+  }
+
+  blockquote {
+    font-size: 16px;
+    /* Fonte menor para melhor leitura */
+    line-height: 1.6;
+    /* Melhor espaçamento entre linhas */
   }
 }

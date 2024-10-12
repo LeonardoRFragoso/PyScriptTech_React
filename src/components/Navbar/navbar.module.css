@@ -126,23 +126,44 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .navbar {
-    padding: var(--spacing-small);
+    padding: 10px 15px;
+    /* Reduzir padding */
   }
 
   .navbarContainer {
     flex-direction: column;
+    align-items: center;
   }
 
   .navbarLinks {
     flex-direction: column;
-    margin-top: var(--spacing-small);
+    margin-top: 10px;
+    gap: 10px;
+    /* Espaçamento entre links */
   }
 
   .navbarItem {
-    margin: var(--spacing-small) 0;
+    margin: 8px 0;
+    font-size: 16px;
+    /* Ajustar tamanho da fonte */
   }
 
   .navbarAction {
-    margin-top: var(--spacing-small);
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbarItem {
+    font-size: 14px;
+    /* Fonte menor para dispositivos muito pequenos */
+    margin: 5px 0;
+  }
+
+  .ctaButton {
+    width: 100%;
+    /* Botão CTA ocupa largura total */
+    text-align: center;
+    padding: 10px 0;
   }
 }

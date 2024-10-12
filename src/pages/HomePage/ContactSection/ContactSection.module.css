@@ -136,5 +136,43 @@
   .contactForm input,
   .contactForm textarea {
     width: 100%;
+    /* Largura total */
+    padding: 12px;
+    /* Redução no padding */
+    font-size: 16px;
+    /* Ajuste de tamanho de fonte */
+  }
+
+  .contactForm {
+    gap: 15px;
+    /* Ajuste do espaço entre campos */
+    padding: 20px;
+    /* Reduzir o padding da form */
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+
+  .contactForm input,
+  .contactForm textarea {
+    padding: 10px;
+    /* Menor padding para telas muito pequenas */
+    font-size: 14px;
+    /* Fonte menor */
+  }
+
+  .contactForm {
+    gap: 10px;
+    /* Reduzir o espaço entre campos */
+  }
+
+  .submitButton {
+    width: 100%;
+    /* Botão ocupa toda a largura */
+    padding: 12px 0;
+    /* Padding menor no botão */
+    font-size: 16px;
+    /* Ajustar tamanho da fonte */
   }
 }

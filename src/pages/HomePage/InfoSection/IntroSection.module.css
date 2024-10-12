@@ -125,15 +125,64 @@
 @media (max-width: 768px) {
   .introSection {
     flex-direction: column;
+    align-items: center;
     padding: var(--spacing-medium);
+    /* Padding otimizado */
+    gap: 20px;
+    /* Espaçamento entre imagem e conteúdo */
   }
 
   .introContent,
   .introImage {
     max-width: 100%;
+    /* Elementos ocupam a largura total */
+    text-align: center;
+    /* Centralizar texto */
   }
 
   .ctaButton {
     margin-top: var(--spacing-medium);
+  }
+}
+
+@media (max-width: 480px) {
+  .introSection {
+    padding: 15px;
+    /* Padding menor para telas pequenas */
+    gap: 15px;
+    /* Gap reduzido entre elementos */
+  }
+
+  .introContent h1 {
+    font-size: 28px;
+    /* Reduzir tamanho do título */
+    margin-bottom: 10px;
+    /* Margem inferior ajustada */
+  }
+
+  .introContent p {
+    font-size: 16px;
+    /* Fonte menor para melhor leitura */
+    line-height: 1.6;
+    /* Espaçamento entre linhas */
+    padding: 0 10px;
+    /* Padding horizontal para evitar colar nas bordas */
+  }
+
+  .introImage {
+    max-width: 250px;
+    /* Reduzir imagem em telas pequenas */
+    margin-bottom: 10px;
+    /* Espaçamento inferior */
+  }
+
+  .ctaButton {
+    width: 100%;
+    /* Botão ocupa largura total */
+    padding: 12px 0;
+    /* Padding otimizado */
+    font-size: 16px;
+    /* Fonte ajustada */
+    margin-top: 10px;
   }
 }

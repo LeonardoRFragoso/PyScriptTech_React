@@ -103,15 +103,58 @@
   .serviceItem {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
+    /* Reduzir padding para telas menores */
   }
 
   .serviceImage {
     width: 100%;
-    margin-bottom: 20px;
+    max-width: 300px;
+    /* Limitar largura máxima */
+    margin-bottom: 15px;
+    /* Espaçamento ajustado */
   }
 
   .serviceText {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.75;
+    /* Melhor espaçamento entre linhas */
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+  .serviceItem {
+    padding: 15px;
+    /* Reduz ainda mais o padding */
+    margin-bottom: 15px;
+    /* Espaçamento menor entre itens */
+  }
+
+  .serviceImage {
+    max-width: 250px;
+    /* Reduzir o tamanho da imagem */
+  }
+
+  .serviceTitle {
+    font-size: 22px;
+    /* Ajustar tamanho do título */
+    margin-bottom: 10px;
+  }
+
+  .serviceText {
+    font-size: 16px;
+    /* Reduzir fonte para melhor leitura */
+    line-height: 1.6;
+    padding: 0 10px;
+    /* Adicionar padding interno para texto */
+  }
+
+  .serviceButton {
+    width: 100%;
+    /* Botão ocupa largura total */
+    padding: 12px 0;
+    /* Padding otimizado */
+    font-size: 16px;
   }
 }

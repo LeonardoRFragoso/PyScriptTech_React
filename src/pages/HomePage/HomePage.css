@@ -49,4 +49,50 @@
   /* Sombra mais intensa ao passar o mouse */
 }
 
-/* Estilos adicionais conforme necessário para outras seções */
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+  .home-page {
+    padding: 40px 10px;
+    /* Redução do padding geral */
+  }
+
+  .intro-section {
+    flex-direction: column;
+    gap: 15px;
+    /* Reduzir o espaço entre os elementos */
+    padding: 20px;
+    /* Padding interno menor */
+  }
+
+  .introContent h1 {
+    font-size: 28px;
+    /* Fonte menor para o título */
+    margin-bottom: 10px;
+    /* Reduzir margem inferior */
+  }
+
+  .introContent p {
+    font-size: 15px;
+    /* Fonte mais ajustada para leitura */
+    line-height: 1.6;
+    /* Melhor espaçamento entre linhas */
+  }
+
+  .introImage {
+    width: 100%;
+    max-width: 280px;
+    /* Limitar o tamanho da imagem */
+    margin-bottom: 15px;
+    /* Espaçamento entre imagem e texto */
+  }
+
+  .ctaButton {
+    width: 100%;
+    /* Botão ocupa a largura total */
+    padding: 12px 0;
+    /* Ajustar padding do botão */
+    font-size: 16px;
+    /* Fonte menor no botão */
+    margin-top: 15px;
+  }
+}

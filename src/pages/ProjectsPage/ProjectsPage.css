@@ -138,16 +138,59 @@
 @media (max-width: 768px) {
   .projectItem {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding: 20px; /* Reduz padding geral */
+    gap: 15px; /* Espaço entre imagem e texto */
   }
 
   .projectImage {
     width: 100%;
-    margin-bottom: 20px;
+    max-width: 400px; /* Limitar largura máxima */
+    margin-bottom: 15px; /* Ajuste de espaçamento */
+    border-radius: 10px; /* Bordas arredondadas */
   }
 
   .projectText {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.75; /* Melhor espaçamento */
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+  .projectItem {
+    padding: 15px; /* Padding menor em telas pequenas */
+    gap: 10px; /* Reduzir espaço entre elementos */
+  }
+
+  .projectImage {
+    max-width: 300px; /* Reduz tamanho da imagem */
+  }
+
+  .projectTitle {
+    font-size: 22px; /* Título ajustado */
+    margin-bottom: 8px;
+  }
+
+  .projectText {
+    font-size: 16px; /* Fonte menor para textos */
+    line-height: 1.6;
+    padding: 0 10px; /* Padding interno para texto */
+  }
+
+  .projectTechnologies h3 {
+    font-size: 20px; /* Ajuste da fonte das tecnologias */
+    margin-bottom: 8px;
+  }
+
+  .projectTechnologies ul {
+    padding-left: 15px; /* Ajuste no padding da lista */
+  }
+
+  .projectButton {
+    width: 100%; /* Botão ocupa largura total */
+    padding: 12px 0;
+    font-size: 16px;
   }
 }

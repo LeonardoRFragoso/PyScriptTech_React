@@ -155,12 +155,44 @@
 @media (max-width: 768px) {
   .whatsappSection {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    /* Redução no espaçamento */
+    align-items: center;
   }
 
   .whatsappButton,
   .gmailButton {
     width: 100%;
+    /* Largura total */
     justify-content: center;
+    padding: 15px 0;
+    /* Reduzir padding vertical */
+    font-size: 18px;
+    /* Ajuste de fonte */
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+  .whatsappSection {
+    gap: 10px;
+    /* Gap menor para telas menores */
+  }
+
+  .whatsappButton,
+  .gmailButton {
+    padding: 12px 0;
+    /* Reduzir ainda mais o padding */
+    font-size: 16px;
+    /* Fonte menor para dispositivos pequenos */
+  }
+
+  .whatsappButton img,
+  .gmailButton img {
+    width: 25px;
+    /* Ícones menores */
+    height: 25px;
+    margin-right: 8px;
+    /* Espaçamento reduzido entre ícone e texto */
   }
 }
