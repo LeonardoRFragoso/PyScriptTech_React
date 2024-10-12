@@ -1,0 +1,66 @@
+/* src/assets/styles/responsive.css */
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    /* Alinha os itens em coluna */
+    padding: 20px;
+    /* Reduz padding para dispositivos menores */
+  }
+
+  .intro-content,
+  .intro-image {
+    max-width: 100%;
+    /* Largura máxima de 100% */
+  }
+
+  .cta-button {
+    margin-top: 15px;
+    /* Margem superior do botão */
+  }
+
+  .services-section {
+    padding: 10px;
+    /* Adiciona padding nas seções menores */
+  }
+
+  .service-text {
+    max-width: 100%;
+    /* Ajustar a largura máxima do texto */
+    line-height: 1.6;
+    /* Aumenta o espaçamento entre linhas */
+    text-align: center;
+    /* Centraliza o texto em telas menores */
+    padding-left: 0;
+    /* Remove o espaço à esquerda */
+    margin-top: 10px;
+    /* Adiciona margem superior */
+  }
+
+  .service-item {
+    flex-direction: column;
+    /* Alinha imagem e texto em coluna em telas pequenas */
+    align-items: center;
+    /* Centraliza os itens */
+  }
+
+  .service-image {
+    margin-bottom: 10px;
+    /* Adiciona espaço abaixo da imagem */
+  }
+
+  .testimonials-container {
+    flex-direction: column;
+    /* Em telas pequenas, mostra os depoimentos em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 90%;
+    /* Ajuste de largura em dispositivos móveis */
+  }
+}

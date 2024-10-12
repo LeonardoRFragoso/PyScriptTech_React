@@ -1,0 +1,148 @@
+:root {
+  --color-bg-nav: #0d0d0d;
+  /* Fundo escuro compatível com o estilo neon */
+  --color-text-nav: #ffffff;
+  /* Texto branco */
+  --color-link-hover: #00aaff;
+  /* Efeito neon no hover */
+  --color-link-text: #00aaff;
+  /* Texto dos links no mesmo tom neon */
+  --color-btn-bg: #00aaff;
+  /* Fundo do botão padrão */
+  --color-btn-hover-bg: #0099cc;
+  /* Cor de fundo no hover do botão */
+  --color-text-hover: #ffffff;
+  /* Texto branco ao passar o mouse */
+  --shadow-standard: 0 2px 10px rgba(0, 168, 255, 0.5);
+  /* Sombra azul suave */
+  --shadow-hover: 0 4px 20px rgba(0, 168, 255, 0.7);
+  /* Sombra neon ao hover */
+  --spacing-small: 12px;
+  /* Aumentar o espaçamento pequeno */
+  --spacing-medium: 18px;
+  /* Aumentar o espaçamento médio */
+  --spacing-large: 25px;
+  --transition-fast: 0.3s;
+  --border-radius: 10px;
+  /* Arredondamento mais suave */
+  --font-size-navbar: 18px;
+  --font-weight-navbar: 700;
+  /* Aumentar peso da fonte */
+}
+
+.navbar {
+  background-color: var(--color-bg-nav);
+  color: var(--color-text-nav);
+  padding: var(--spacing-medium) var(--spacing-large);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow-standard);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.navbar:hover {
+  background-color: rgba(13, 13, 13, 0.9);
+  /* Leve transparência no hover */
+  box-shadow: var(--shadow-hover);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbarLogo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 45px;
+  /* Aumentei um pouco o tamanho do logo */
+}
+
+.navbarLinks {
+  display: flex;
+}
+
+.navbarItem {
+  color: var(--color-link-text);
+  text-decoration: none;
+  margin: 0 var(--spacing-large);
+  /* Aumentado o espaçamento entre os links */
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0px 0px 12px rgba(0, 168, 255, 0.4);
+  /* Efeito neon nos links */
+  font-size: var(--font-size-navbar);
+  font-weight: var(--font-weight-navbar);
+  letter-spacing: 0.5px;
+  /* Maior espaçamento entre as letras */
+}
+
+.navbarItem:hover {
+  background-color: var(--color-link-hover);
+  color: var(--color-text-hover);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.9);
+  /* Sombra neon ao hover mais brilhante */
+}
+
+.navbarAction {
+  display: flex;
+  margin-left: var(--spacing-large);
+  /* Espaçamento maior entre o CTA e os itens da navbar */
+}
+
+.ctaButton {
+  background-color: var(--color-btn-bg);
+  color: var(--color-text-hover);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-small) var(--spacing-large);
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 168, 255, 0.6);
+  /* Sombra neon mais intensa no botão */
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  font-size: 20px;
+  /* Aumentar o tamanho da fonte para o botão */
+  font-weight: bold;
+  /* Mais peso para destacar */
+}
+
+.ctaButton:hover {
+  background-color: var(--color-btn-hover-bg);
+  transform: scale(1.08);
+  box-shadow: 0px 0px 25px rgba(0, 153, 204, 0.8);
+  /* Sombra neon azul no hover mais intensa */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar {
+    padding: var(--spacing-small);
+  }
+
+  .navbarContainer {
+    flex-direction: column;
+  }
+
+  .navbarLinks {
+    flex-direction: column;
+    margin-top: var(--spacing-small);
+  }
+
+  .navbarItem {
+    margin: var(--spacing-small) 0;
+  }
+
+  .navbarAction {
+    margin-top: var(--spacing-small);
+  }
+}

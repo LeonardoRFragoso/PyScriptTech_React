@@ -1,0 +1,166 @@
+/* Ajustes gerais */
+.contactPage {
+  padding: 80px 20px;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contactTitle {
+  font-size: 42px;
+  color: #00aaff;
+  margin-bottom: 30px;
+  text-shadow: 0px 0px 8px #00aaff;
+}
+
+/* Estilização do formulário */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid #00aaff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contactForm:hover {
+  box-shadow: 0 0 25px rgba(0, 168, 255, 0.5);
+  transform: scale(1.02);
+}
+
+/* Estilização dos campos de input e textarea */
+.formGroup input,
+.formGroup textarea {
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #00aaff;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 168, 255, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #00ccff;
+  box-shadow: 0px 0px 8px rgba(0, 204, 255, 0.7);
+  outline: none;
+}
+
+.formGroup label {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #bfbfbf;
+  text-shadow: 0px 0px 3px #00aaff;
+}
+
+/* Botão de Enviar */
+.submitButton {
+  background-color: #00aaff;
+  color: #ffffff;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 0px 15px rgba(0, 168, 255, 0.5);
+}
+
+.submitButton:hover {
+  background-color: #0099cc;
+  transform: scale(1.03);
+  box-shadow: 0px 0px 20px rgba(0, 153, 204, 0.5);
+}
+
+/* Seção do WhatsApp e Email */
+.whatsappSection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.whatsappButton,
+.gmailButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 168, 255, 0.4);
+  text-align: center;
+}
+
+/* Botão do WhatsApp */
+.whatsappButton {
+  background-color: #1ebe54;
+  border: 2px solid #25D366;
+  color: #ffffff;
+}
+
+.whatsappButton:hover {
+  background-color: #25D366;
+  color: #ffffff;
+  /* Garante que o texto continue branco no hover */
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(37, 211, 102, 0.8);
+  /* Sombra neon verde */
+}
+
+.whatsappButton img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+}
+
+/* Botão do Gmail */
+.gmailButton {
+  background-color: #ffffff;
+  border: 2px solid #DB4437;
+  color: #DB4437;
+}
+
+.gmailButton:hover {
+  background-color: #f5f5f5;
+  /* Fundo suavemente claro */
+  color: #DB4437;
+  /* Mantém o texto vermelho no hover */
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(219, 68, 55, 0.8);
+  /* Sombra neon vermelha */
+}
+
+.gmailButton img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .whatsappSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .whatsappButton,
+  .gmailButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

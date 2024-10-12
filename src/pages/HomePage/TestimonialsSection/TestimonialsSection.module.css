@@ -1,0 +1,151 @@
+:root {
+  --color-bg-section: #1f1f1f;
+  --color-bg-testimonial: #2a2a2a;
+  --color-text-title: #00aaff;
+  --color-text-testimonial: #fff;
+  --color-btn-bg: #00aaff;
+  --color-btn-hover-bg: #4ca1af;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow-hover: rgba(0, 0, 0, 0.7);
+  --shadow-btn: rgba(0, 168, 255, 0.5);
+  --shadow-btn-hover: rgba(0, 168, 255, 0.8);
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 40px;
+  --transition-fast: 0.3s;
+  --border-radius: 10px;
+  --neon-border-color: rgba(0, 168, 255, 0.6);
+  /* Brilho suavizado */
+}
+
+/* Classe unificada para a borda neon */
+.sectionWithNeonBorder {
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionWithNeonBorder:before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  /* Espessura da borda */
+  background-color: var(--neon-border-color);
+  box-shadow: 0 0 10px var(--neon-border-color), 0 0 25px var(--neon-border-color), 0 0 35px var(--neon-border-color);
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.sectionWithNeonBorder:hover:before {
+  box-shadow: 0 0 20px var(--neon-border-color), 0 0 40px var(--neon-border-color), 0 0 60px var(--neon-border-color);
+}
+
+/* Section de Depoimentos */
+.testimonialsSection {
+  margin: var(--spacing-large) auto;
+  text-align: center;
+  background: var(--color-bg-section);
+  padding: var(--spacing-large) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  max-width: 2200px;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+/* Adicionando a classe de borda neon */
+.testimonialsSection.sectionWithNeonBorder {
+  /* Já herda o estilo de borda neon da classe unificada */
+}
+
+/* Título com efeito neon */
+.testimonialsTitle {
+  margin-bottom: var(--spacing-medium);
+  font-size: 28px;
+  color: var(--color-text-title);
+  text-shadow: 0px 0px 8px var(--color-text-title);
+}
+
+/* Container de Depoimentos */
+.testimonialsContainer {
+  margin-top: var(--spacing-medium);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Itens de Depoimentos */
+.testimonialItem {
+  margin: var(--spacing-small);
+  max-width: 400px;
+  text-align: center;
+  padding: var(--spacing-medium);
+  background: var(--color-bg-testimonial);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px var(--color-shadow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.testimonialItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--color-shadow-hover);
+}
+
+/* Avatar com efeito hover */
+.testimonialAvatar {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: var(--spacing-small);
+  box-shadow: 0px 0px 10px rgba(0, 168, 255, 0.4);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.testimonialAvatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px var(--color-avatar-hover);
+}
+
+blockquote {
+  font-style: italic;
+  color: var(--color-text-testimonial);
+  margin: var(--spacing-small) 0;
+}
+
+/* Botão "Saiba Mais" com efeito neon */
+.ctaButton {
+  background-color: var(--color-btn-bg);
+  color: var(--color-text-btn);
+  padding: var(--spacing-small) var(--spacing-medium);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 2px 10px var(--shadow-btn), 0 0 20px rgba(0, 168, 255, 0.5);
+  margin-top: var(--spacing-small);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-btn-hover-bg);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px var(--shadow-btn-hover), 0 0 40px rgba(0, 168, 255, 0.8);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .testimonialsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonialItem {
+    max-width: 100%;
+  }
+}

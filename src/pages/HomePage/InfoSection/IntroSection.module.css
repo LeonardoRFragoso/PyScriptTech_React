@@ -1,0 +1,139 @@
+:root {
+  --color-bg-section: #1f1f1f;
+  --color-text-title: #00aaff;
+  --color-text-btn: #fff;
+  --color-btn-bg: #00aaff;
+  --color-btn-hover-bg: #4ca1af;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow-hover: rgba(0, 0, 0, 0.7);
+  --shadow-btn: rgba(0, 168, 255, 0.5);
+  --shadow-btn-hover: rgba(0, 168, 255, 0.8);
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 40px;
+  --transition-fast: 0.3s;
+  --border-radius: 10px;
+  --neon-border-color: rgba(0, 168, 255, 0.6);
+  /* Brilho suavizado */
+}
+
+.introSection {
+  background-color: var(--color-bg-section);
+  padding: var(--spacing-large) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  margin-top: var(--spacing-large);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.introSection:before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  /* Altura da borda ajustada */
+  background-color: var(--neon-border-color);
+  box-shadow: 0 0 10px var(--neon-border-color), 0 0 25px var(--neon-border-color), 0 0 35px var(--neon-border-color);
+  /* Brilho reduzido */
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.introSection:hover:before {
+  box-shadow: 0 0 20px var(--neon-border-color), 0 0 40px var(--neon-border-color), 0 0 60px var(--neon-border-color);
+  /* Efeito neon controlado no hover */
+}
+
+.introSection:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 30px var(--color-shadow-hover);
+}
+
+.introContent {
+  max-width: 60%;
+  text-align: left;
+}
+
+.introContent h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--color-text-title);
+  margin-bottom: var(--spacing-medium);
+  text-shadow: 0px 0px 8px var(--color-text-title);
+  transition: text-shadow var(--transition-fast);
+}
+
+.introContent h1:hover {
+  text-shadow: 0px 0px 15px var(--color-text-title);
+}
+
+.introContent p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-medium);
+  color: #bfbfbf;
+  text-shadow: 0px 0px 4px rgba(0, 168, 255, 0.4);
+}
+
+.ctaButton {
+  background-color: var(--color-btn-bg);
+  color: var(--color-text-btn);
+  padding: var(--spacing-small) var(--spacing-medium);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 2px 8px var(--shadow-btn);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-btn-hover-bg);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px var(--shadow-btn-hover);
+}
+
+.introImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.introImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  width: 350px;
+  box-shadow: 0px 0px 20px rgba(0, 168, 255, 0.7);
+}
+
+.introSection:hover .introImage img {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 168, 255, 0.8);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .introSection {
+    flex-direction: column;
+    padding: var(--spacing-medium);
+  }
+
+  .introContent,
+  .introImage {
+    max-width: 100%;
+  }
+
+  .ctaButton {
+    margin-top: var(--spacing-medium);
+  }
+}

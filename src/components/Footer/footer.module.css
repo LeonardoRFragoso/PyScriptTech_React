@@ -1,0 +1,100 @@
+/* src/components/Footer/footer.module.css */
+
+.footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: var(--spacing-medium) var(--spacing-large);
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(0, 168, 255, 0.8);
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Links no rodapé */
+.footerLinks {
+  margin-top: var(--spacing-medium);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  /* Ajuste fino para manter um espaço uniforme */
+}
+
+.footerLink {
+  color: #00aaff;
+  text-decoration: none;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 18px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px rgba(0, 168, 255, 0.4);
+}
+
+.footerLink:hover {
+  background-color: #00aaff;
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.9);
+}
+
+/* Ícones de redes sociais */
+.footerSocials {
+  margin-top: var(--spacing-small);
+  /* Menor espaço entre os links e ícones */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  /* Ajuste fino no espaçamento */
+}
+
+.footerSocialLink {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footerSocialLink img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 12px rgba(0, 168, 255, 0.5);
+}
+
+.footerSocialLink:hover img {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 168, 255, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Ajuste do espaçamento em telas menores */
+  }
+
+  .footerSocials {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+}
