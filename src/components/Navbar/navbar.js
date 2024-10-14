@@ -1,28 +1,39 @@
 // src/components/Navbar/navbar.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css'; // Importando o CSS Module
-
-// Caminho atualizado da logo
-import logo from '../../assets/img/logopyscript.png'; 
+import logo from '../../assets/img/logopyscript.png'; // Caminho atualizado da logo
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={styles.navbar}>
       <div className={styles.navbarContainer}>
-        {/* Link para a página inicial com a logo */}
+        {/* Logo e link para a página inicial */}
         <Link to="/" className={styles.navbarLogo}>
           <img src={logo} alt="Pyscript.tech Logo" className={styles.logoImage} />
         </Link>
-        <nav className={styles.navbarLinks}>
-          {/* Links de navegação */}
+
+        {/* Botão Hamburguer */}
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          ☰
+        </button>
+
+        {/* Menu de navegação, visível ou escondido dependendo do estado */}
+        <nav className={`${styles.navbarLinks} ${isMenuOpen ? styles.showMenu : ''}`}>
           <Link to="/" className={styles.navbarItem}>Home</Link>
           <Link to="/services" className={styles.navbarItem}>Serviços</Link>
           <Link to="/projects" className={styles.navbarItem}>Projetos</Link>
           <Link to="/contact" className={styles.navbarItem}>Contato</Link>
         </nav>
+
+        {/* Botão de ação */}
         <div className={styles.navbarAction}>
-          {/* Botão de ação */}
           <button className={styles.ctaButton}>Solicite um Orçamento</button>
         </div>
       </div>

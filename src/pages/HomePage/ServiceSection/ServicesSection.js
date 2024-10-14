@@ -2,9 +2,9 @@
 import React from 'react';
 import Slider from "react-slick"; // Importa o Slider
 import styles from './ServicesSection.module.css';
-import webdevImage from '../../../assets/img/webdev.png'; // Caminho correto
-import botdevImage from '../../../assets/img/botdev.png'; // Caminho correto
-import softdevImage from '../../../assets/img/Softdev.png'; // Corrigido para 'Softdev.png'
+import webdevImage from '../../../assets/img/webdev.png';
+import botdevImage from '../../../assets/img/botdev.png';
+import softdevImage from '../../../assets/img/Softdev.png';
 
 const ServicesSection = () => {
   // Configurações do carrossel
@@ -16,15 +16,29 @@ const ServicesSection = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [  // Configurações responsivas para ajustar layout em diferentes telas
+      {
+        breakpoint: 768,  // Em telas abaixo de 768px
+        settings: {
+          arrows: false,   // Remove setas no mobile
+          dots: true,
+        }
+      }
+    ]
   };
 
   return (
     <section className={styles.servicesSection}>
       <h2 className={styles.sectionTitle}>Nossos Serviços</h2>
       <Slider {...settings} className={styles.servicesCarousel}>
+        {/* Serviço 1 */}
         <div className={styles.serviceItem}>
           <div className={styles.serviceContent}>
-            <img src={webdevImage} alt="Desenvolvimento Web" className={styles.serviceImage} />
+            <img 
+              src={webdevImage} 
+              alt="Desenvolvimento Web" 
+              className={styles.serviceImage} 
+            />
             <div className={styles.serviceText}>
               <h3 className={styles.serviceTitle}>Desenvolvimento Web</h3>
               <p className={styles.serviceDescription}>
@@ -34,9 +48,15 @@ const ServicesSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Serviço 2 */}
         <div className={styles.serviceItem}>
           <div className={styles.serviceContent}>
-            <img src={botdevImage} alt="Desenvolvimento de Bots" className={styles.serviceImage} />
+            <img 
+              src={botdevImage} 
+              alt="Desenvolvimento de Bots" 
+              className={styles.serviceImage} 
+            />
             <div className={styles.serviceText}>
               <h3 className={styles.serviceTitle}>Desenvolvimento de Bots</h3>
               <p className={styles.serviceDescription}>
@@ -46,9 +66,15 @@ const ServicesSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Serviço 3 */}
         <div className={styles.serviceItem}>
           <div className={styles.serviceContent}>
-            <img src={softdevImage} alt="Desenvolvimento de Software" className={styles.serviceImage} />
+            <img 
+              src={softdevImage} 
+              alt="Desenvolvimento de Software" 
+              className={styles.serviceImage} 
+            />
             <div className={styles.serviceText}>
               <h3 className={styles.serviceTitle}>Desenvolvimento de Software</h3>
               <p className={styles.serviceDescription}>

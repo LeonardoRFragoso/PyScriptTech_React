@@ -1,50 +1,47 @@
 :root {
   --color-bg-nav: #0d0d0d;
-  /* Fundo escuro compatível com o estilo neon */
+  /* Fundo escuro compatível com estilo neon */
   --color-text-nav: #ffffff;
   /* Texto branco */
   --color-link-hover: #00aaff;
   /* Efeito neon no hover */
   --color-link-text: #00aaff;
-  /* Texto dos links no mesmo tom neon */
+  /* Links no mesmo tom neon */
   --color-btn-bg: #00aaff;
-  /* Fundo do botão padrão */
+  /* Fundo do botão */
   --color-btn-hover-bg: #0099cc;
-  /* Cor de fundo no hover do botão */
+  /* Cor do botão no hover */
   --color-text-hover: #ffffff;
-  /* Texto branco ao passar o mouse */
+  /* Texto branco no hover */
   --shadow-standard: 0 2px 10px rgba(0, 168, 255, 0.5);
-  /* Sombra azul suave */
+  /* Sombra suave */
   --shadow-hover: 0 4px 20px rgba(0, 168, 255, 0.7);
-  /* Sombra neon ao hover */
+  /* Sombra neon no hover */
   --spacing-small: 12px;
-  /* Aumentar o espaçamento pequeno */
   --spacing-medium: 18px;
-  /* Aumentar o espaçamento médio */
   --spacing-large: 25px;
   --transition-fast: 0.3s;
   --border-radius: 10px;
-  /* Arredondamento mais suave */
+  /* Arredondamento suave */
   --font-size-navbar: 18px;
   --font-weight-navbar: 700;
-  /* Aumentar peso da fonte */
 }
 
+/* Navbar principal */
 .navbar {
   background-color: var(--color-bg-nav);
   color: var(--color-text-nav);
   padding: var(--spacing-medium) var(--spacing-large);
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 1000;
   box-shadow: var(--shadow-standard);
   transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+/* Efeito ao passar o mouse sobre a navbar */
 .navbar:hover {
   background-color: rgba(13, 13, 13, 0.9);
-  /* Leve transparência no hover */
+  /* Transparente no hover */
   box-shadow: var(--shadow-hover);
 }
 
@@ -56,6 +53,7 @@
   margin: 0 auto;
 }
 
+/* Logo */
 .navbarLogo {
   display: flex;
   align-items: center;
@@ -63,43 +61,40 @@
 
 .logoImage {
   height: 45px;
-  /* Aumentei um pouco o tamanho do logo */
+  /* Tamanho da logo */
 }
 
+/* Links de navegação */
 .navbarLinks {
   display: flex;
+  gap: var(--spacing-large);
+  transition: transform var(--transition-fast);
 }
 
+/* Link individual */
 .navbarItem {
   color: var(--color-link-text);
   text-decoration: none;
-  margin: 0 var(--spacing-large);
-  /* Aumentado o espaçamento entre os links */
   padding: var(--spacing-small) var(--spacing-medium);
   border-radius: var(--border-radius);
-  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-  box-shadow: 0px 0px 12px rgba(0, 168, 255, 0.4);
-  /* Efeito neon nos links */
   font-size: var(--font-size-navbar);
   font-weight: var(--font-weight-navbar);
   letter-spacing: 0.5px;
-  /* Maior espaçamento entre as letras */
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0px 0px 12px rgba(0, 168, 255, 0.4);
+  /* Sombra leve neon */
 }
 
+/* Efeito neon no hover */
 .navbarItem:hover {
   background-color: var(--color-link-hover);
   color: var(--color-text-hover);
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(0, 168, 255, 0.9);
-  /* Sombra neon ao hover mais brilhante */
+  box-shadow: 0px 0px 20px rgba(0, 168, 255, 0.9);
+  /* Sombra mais intensa */
 }
 
-.navbarAction {
-  display: flex;
-  margin-left: var(--spacing-large);
-  /* Espaçamento maior entre o CTA e os itens da navbar */
-}
-
+/* Botão CTA */
 .ctaButton {
   background-color: var(--color-btn-bg);
   color: var(--color-text-hover);
@@ -108,26 +103,42 @@
   padding: var(--spacing-small) var(--spacing-large);
   cursor: pointer;
   box-shadow: 0px 0px 15px rgba(0, 168, 255, 0.6);
-  /* Sombra neon mais intensa no botão */
+  /* Sombra neon */
   transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
   font-size: 20px;
-  /* Aumentar o tamanho da fonte para o botão */
   font-weight: bold;
-  /* Mais peso para destacar */
 }
 
 .ctaButton:hover {
   background-color: var(--color-btn-hover-bg);
   transform: scale(1.08);
   box-shadow: 0px 0px 25px rgba(0, 153, 204, 0.8);
-  /* Sombra neon azul no hover mais intensa */
+  /* Sombra mais intensa no hover */
 }
 
-/* Responsividade */
+/* Botão hamburguer para dispositivos móveis */
+.hamburger {
+  display: none;
+  /* Escondido no desktop */
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: var(--color-text-nav);
+  cursor: pointer;
+  z-index: 1001;
+  /* Sempre na frente do menu */
+}
+
+/* Menu visível no mobile */
+.showMenu {
+  display: flex !important;
+}
+
+/* Estilo e comportamento do menu no mobile */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 15px;
-    /* Reduzir padding */
+    /* Reduzir padding no mobile */
   }
 
   .navbarContainer {
@@ -136,33 +147,55 @@
   }
 
   .navbarLinks {
+    display: none;
+    /* Escondido por padrão */
     flex-direction: column;
-    margin-top: 10px;
-    gap: 10px;
-    /* Espaçamento entre links */
+    width: 100%;
+    background-color: var(--color-bg-nav);
+    position: absolute;
+    top: 60px;
+    /* Abaixo da navbar */
+    left: 0;
+    height: calc(100vh - 60px);
+    /* Ocupa toda a altura restante */
+    overflow-y: auto;
+    /* Adiciona rolagem no menu */
+    padding: var(--spacing-medium) 0;
+    box-shadow: var(--shadow-standard);
+    z-index: 999;
   }
 
   .navbarItem {
-    margin: 8px 0;
+    margin: 10px 0;
     font-size: 16px;
-    /* Ajustar tamanho da fonte */
+    /* Ajuste no tamanho da fonte */
+    text-align: center;
+    width: 100%;
+    /* Cada item ocupa a largura toda */
+  }
+
+  .hamburger {
+    display: block;
+    /* Exibir o botão no mobile */
   }
 
   .navbarAction {
     margin-top: 15px;
+    /* Espaçamento entre botão e menu */
   }
 }
 
+/* Responsividade para dispositivos pequenos */
 @media (max-width: 480px) {
   .navbarItem {
     font-size: 14px;
-    /* Fonte menor para dispositivos muito pequenos */
+    /* Fonte menor para dispositivos pequenos */
     margin: 5px 0;
   }
 
   .ctaButton {
     width: 100%;
-    /* Botão CTA ocupa largura total */
+    /* O botão ocupa toda a largura */
     text-align: center;
     padding: 10px 0;
   }

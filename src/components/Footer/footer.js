@@ -1,25 +1,38 @@
 // src/components/Footer/footer.js
-import React from 'react';
-import styles from './footer.module.css'; // Importando os estilos como um módulo
-import gmailIcon from '../../assets/Icons/gmail.png'; // Caminho ajustado para o diretório src
+import React, { useState } from 'react';
+import styles from './footer.module.css'; // Importando os estilos
+import gmailIcon from '../../assets/Icons/gmail.png';
 import linkedinIcon from '../../assets/Icons/linkedin-logo.png';
 import instagramIcon from '../../assets/Icons/instagram-icon.png';
 import whatsappIcon from '../../assets/Icons/whatsapp.png';
-import githubIcon from '../../assets/Icons/github.png'; // Novo ícone do GitHub
+import githubIcon from '../../assets/Icons/github.png';
 
 const Footer = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <p>&copy; {new Date().getFullYear()} Pyscript.tech. Todos os direitos reservados.</p>
-        
-        <div className={styles.footerLinks}>
+
+        {/* Botão hamburguer para abrir/fechar os links */}
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          ☰
+        </button>
+
+        {/* Menu de navegação controlado pelo hambúrguer */}
+        <div className={`${styles.footerMenu} ${isMenuOpen ? styles.showMenu : ''}`}>
           <a href="/" className={styles.footerLink}>Home</a>
           <a href="/services" className={styles.footerLink}>Serviços</a>
           <a href="/projects" className={styles.footerLink}>Projetos</a>
           <a href="/contact" className={styles.footerLink}>Contato</a>
         </div>
 
+        {/* Ícones sociais sempre visíveis */}
         <div className={styles.footerSocials}>
           <a href="mailto:leonardorfragoso@gmail.com" target="_blank" rel="noopener noreferrer" className={styles.footerSocialLink}>
             <img src={gmailIcon} alt="Gmail" />
