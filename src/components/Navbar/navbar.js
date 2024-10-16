@@ -1,7 +1,6 @@
-// src/components/Navbar/navbar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './navbar.module.css'; // Importando o CSS Module
+import styles from './navbar.module.css'; // Importando os estilos
 import logo from '../../assets/img/logopyscript.png'; // Caminho atualizado da logo
 
 const Navbar = () => {
@@ -24,7 +23,7 @@ const Navbar = () => {
           ☰
         </button>
 
-        {/* Menu de navegação, visível ou escondido dependendo do estado */}
+        {/* Menu de navegação, controlado pelo estado isMenuOpen */}
         <nav className={`${styles.navbarLinks} ${isMenuOpen ? styles.showMenu : ''}`}>
           <Link to="/" className={styles.navbarItem}>Home</Link>
           <Link to="/services" className={styles.navbarItem}>Serviços</Link>
@@ -32,7 +31,7 @@ const Navbar = () => {
           <Link to="/contact" className={styles.navbarItem}>Contato</Link>
         </nav>
 
-        {/* Botão de ação */}
+        {/* Botão de ação (CTA) */}
         <div className={styles.navbarAction}>
           <button className={styles.ctaButton}>Solicite um Orçamento</button>
         </div>
