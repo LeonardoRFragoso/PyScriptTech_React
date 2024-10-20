@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';  // Importar useNavigate
 import styles from './navbar.module.css';
 import logo from '../../assets/img/logopyscript.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarHeight, setNavbarHeight] = useState(0);
+
+  const navigate = useNavigate(); // Hook para redirecionamento
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,6 +33,11 @@ const Navbar = () => {
       setNavbarHeight(navbarElement.offsetHeight);
     }
   }, []);
+
+  // Função para redirecionar o usuário para a página de contato
+  const handleContactRedirect = () => {
+    navigate('/contact');  // Redireciona para a página de contato
+  };
 
   return (
     <>
@@ -64,7 +71,10 @@ const Navbar = () => {
 
           {/* Botão de ação (CTA) */}
           <div className={styles.navbarAction}>
-            <button className={styles.ctaButton}>Solicite um Orçamento</button>
+            {/* Chame a função handleContactRedirect ao clicar no botão */}
+            <button className={styles.ctaButton} onClick={handleContactRedirect}>
+              Solicite um Orçamento
+            </button>
           </div>
         </div>
       </header>
