@@ -15,7 +15,7 @@ const IntroSection = () => {
     <section className={styles.introSection}>
       <div className={styles.introContent}>
         <div className={styles.badge}>
-          Software House • São Paulo
+          Software House • Rio de Janeiro
         </div>
         <h1>
           Do código à conquista:
