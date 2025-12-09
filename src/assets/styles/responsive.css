@@ -1,126 +1,53 @@
 /* src/assets/styles/responsive.css */
 
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-  .intro-section {
-    flex-direction: column;
-    padding: 20px;
-    /* Padding reduzido */
-    gap: 15px;
-    /* Espaçamento entre conteúdo e imagem */
-  }
+/* Ajustes globais de responsividade */
 
-  .intro-content,
-  .intro-image {
-    max-width: 100%;
-    text-align: center;
-    /* Centraliza o conteúdo */
-  }
-
-  .cta-button {
-    width: 100%;
-    /* Botão ocupa toda a largura */
-    margin-top: 15px;
-    padding: 10px 0;
-    /* Padding otimizado */
-    font-size: 16px;
-  }
-
-  .services-section {
-    padding: 15px;
-    /* Ajuste no padding geral */
-  }
-
-  .service-text {
-    max-width: 90%;
-    /* Limitar largura do texto */
-    line-height: 1.6;
-    text-align: center;
-    padding-left: 0;
-    margin-top: 10px;
-    font-size: 18px;
-    /* Ajuste de fonte */
-  }
-
-  .service-item {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    /* Espaçamento entre imagem e texto */
-  }
-
-  .service-image {
-    max-width: 300px;
-    /* Limitar a largura da imagem */
-    margin-bottom: 10px;
-  }
-
-  .testimonials-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    /* Espaço entre os depoimentos */
-  }
-
-  .testimonial-item {
-    max-width: 90%;
-    /* Limitar a largura do item */
-    margin: 10px 0;
-    /* Espaço entre itens */
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    width: 90%;
-    /* Largura consistente */
-    margin-bottom: 10px;
-    /* Espaço entre campos */
-    font-size: 16px;
-    /* Fonte ajustada para mobile */
-  }
-
-  .contact-form button {
-    width: 100%;
-    /* Botão ocupa largura total */
-    padding: 12px 0;
-    /* Padding otimizado */
-    font-size: 16px;
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --spacing-xl: 40px;
+    --spacing-2xl: 56px;
   }
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+  }
+
+  /* Ajustes de seção genéricos */
+  section {
+    padding: 48px 16px;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+/* Mobile pequeno */
 @media (max-width: 480px) {
-  .intro-section {
-    padding: 15px;
-    /* Padding reduzido para telas pequenas */
-    gap: 10px;
+  :root {
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 28px;
   }
 
-  .intro-content h1 {
-    font-size: 28px;
-    /* Ajuste do tamanho do título */
-    margin-bottom: 8px;
+  /* Ajustes de seção */
+  section {
+    padding: 40px 16px;
+  }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 360px) {
+  :root {
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
   }
 
-  .intro-content p {
-    font-size: 16px;
-    padding: 0 10px;
-    /* Padding para evitar texto colado nas bordas */
-  }
-
-  .service-image {
-    max-width: 250px;
-    /* Reduz tamanho da imagem */
-  }
-
-  .testimonial-item {
-    padding: 15px;
-    /* Adiciona padding nos depoimentos */
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    padding: 10px;
-    /* Padding menor para inputs e textarea */
+  h1 {
+    font-size: 1.75rem !important;
   }
 }

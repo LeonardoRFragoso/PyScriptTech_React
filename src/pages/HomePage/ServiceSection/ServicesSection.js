@@ -39,7 +39,10 @@ const ServicesSection = () => {
 
   return (
     <section className={styles.servicesSection}>
-      <h2 className={styles.sectionTitle}>Nossos Serviços</h2>
+      <h2 className={styles.sectionTitle}>Nossas Soluções</h2>
+      <p className={styles.sectionSubtitle}>
+        Tecnologia de ponta para transformar desafios em oportunidades de crescimento
+      </p>
       <Slider {...settings} className={styles.servicesCarousel}>
         {/* Serviço 1 */}
         <div className={styles.serviceItem}>
@@ -50,11 +53,19 @@ const ServicesSection = () => {
               className={styles.serviceImage} 
             />
             <div className={styles.serviceText}>
-              <h3 className={styles.serviceTitle}>Desenvolvimento Web</h3>
+              <span className={styles.serviceNumber}>01</span>
+              <h3 className={styles.serviceTitle}>Aplicações Web</h3>
               <p className={styles.serviceDescription}>
-                Construímos sites e aplicações web de alta qualidade. Nossa equipe utiliza as melhores práticas de desenvolvimento e design responsivo para garantir uma experiência de usuário excepcional.
+                Desenvolvemos plataformas web escaláveis e de alta performance. 
+                Utilizamos React, Node.js e as tecnologias mais modernas do mercado 
+                para criar experiências digitais que convertem visitantes em clientes.
               </p>
-              <button className={styles.serviceButton}>Saiba Mais</button>
+              <button className={styles.serviceButton}>
+                Explorar
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -64,15 +75,23 @@ const ServicesSection = () => {
           <div className={styles.serviceContent}>
             <img 
               src={botdevImage} 
-              alt="Desenvolvimento de Bots" 
+              alt="Automação Inteligente" 
               className={styles.serviceImage} 
             />
             <div className={styles.serviceText}>
-              <h3 className={styles.serviceTitle}>Desenvolvimento de Bots</h3>
+              <span className={styles.serviceNumber}>02</span>
+              <h3 className={styles.serviceTitle}>Automação & Bots</h3>
               <p className={styles.serviceDescription}>
-                Automatize processos com nossos bots personalizados. Nós desenvolvemos soluções que aumentam a eficiência e reduzem custos operacionais, adaptadas às necessidades específicas do seu negócio.
+                Elimine tarefas repetitivas e reduza custos operacionais em até 70%. 
+                Criamos bots inteligentes para WhatsApp, Discord, Telegram e sistemas 
+                de automação que trabalham 24/7 pelo seu negócio.
               </p>
-              <button className={styles.serviceButton}>Saiba Mais</button>
+              <button className={styles.serviceButton}>
+                Explorar
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -82,15 +101,23 @@ const ServicesSection = () => {
           <div className={styles.serviceContent}>
             <img 
               src={softdevImage} 
-              alt="Desenvolvimento de Software" 
+              alt="Software Sob Medida" 
               className={styles.serviceImage} 
             />
             <div className={styles.serviceText}>
-              <h3 className={styles.serviceTitle}>Desenvolvimento de Software</h3>
+              <span className={styles.serviceNumber}>03</span>
+              <h3 className={styles.serviceTitle}>Software Sob Medida</h3>
               <p className={styles.serviceDescription}>
-                Soluções de software sob medida para sua empresa. Analisamos suas necessidades e criamos sistemas que otimizam seus processos e melhoram a produtividade.
+                Sistemas personalizados que se adaptam ao seu fluxo de trabalho, 
+                não o contrário. Do planejamento à entrega, desenvolvemos soluções 
+                que aumentam a produtividade e geram resultados mensuráveis.
               </p>
-              <button className={styles.serviceButton}>Saiba Mais</button>
+              <button className={styles.serviceButton}>
+                Explorar
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>

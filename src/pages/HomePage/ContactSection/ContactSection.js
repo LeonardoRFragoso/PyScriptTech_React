@@ -42,13 +42,16 @@ const ContactSection = () => {
 
   return (
     <section className={styles.contactSection}>
-      <h2>Entre em contato</h2>
-      <p>Se você está interessado em nossos serviços, não hesite em nos contatar!</p>
+      <h2>Vamos Construir Juntos?</h2>
+      <p>
+        Conte-nos sobre seu projeto. Nossa equipe responde em até 24 horas 
+        com uma proposta personalizada para suas necessidades.
+      </p>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <input
           type="text"
           name="name"
-          placeholder="Seu nome"
+          placeholder="Como podemos te chamar?"
           value={formData.name}
           onChange={handleChange}
           className={styles.inputField}
@@ -57,16 +60,16 @@ const ContactSection = () => {
         <input
           type="email"
           name="email"
-          placeholder="Seu e-mail"
+          placeholder="Seu melhor e-mail"
           value={formData.email}
           onChange={handleChange}
           className={styles.inputField}
           required
         />
         <input
-          type="tel" // Definindo o tipo como telefone
+          type="tel"
           name="phone"
-          placeholder="Seu telefone"
+          placeholder="WhatsApp ou telefone"
           value={formData.phone}
           onChange={handleChange}
           className={styles.inputField}
@@ -74,13 +77,15 @@ const ContactSection = () => {
         />
         <textarea
           name="message"
-          placeholder="Sua mensagem"
+          placeholder="Descreva seu projeto ou desafio..."
           value={formData.message}
           onChange={handleChange}
           className={styles.textareaField}
           required
         />
-        <button type="submit" className={styles.ctaButton}>Enviar</button>
+        <button type="submit" className={styles.ctaButton}>
+          Solicitar Proposta
+        </button>
       </form>
       {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}

@@ -1,186 +1,166 @@
-:root {
-  --color-bg-section: #1f1f1f;
-  --color-bg-testimonial: #2a2a2a;
-  --color-text-title: #00aaff;
-  --color-text-testimonial: #fff;
-  --color-btn-bg: #00aaff;
-  --color-btn-hover-bg: #4ca1af;
-  --color-shadow: rgba(0, 0, 0, 0.5);
-  --color-shadow-hover: rgba(0, 0, 0, 0.7);
-  --shadow-btn: rgba(0, 168, 255, 0.5);
-  --shadow-btn-hover: rgba(0, 168, 255, 0.8);
-  --spacing-small: 10px;
-  --spacing-medium: 20px;
-  --spacing-large: 40px;
-  --transition-fast: 0.3s;
-  --border-radius: 10px;
-  --neon-border-color: rgba(0, 168, 255, 0.6);
-  /* Brilho suavizado */
-}
-
-/* Classe unificada para a borda neon */
-.sectionWithNeonBorder {
-  position: relative;
-  overflow: hidden;
-}
-
-.sectionWithNeonBorder:before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  /* Espessura da borda */
-  background-color: var(--neon-border-color);
-  box-shadow: 0 0 10px var(--neon-border-color), 0 0 25px var(--neon-border-color), 0 0 35px var(--neon-border-color);
-  border-radius: 5px;
-  transition: box-shadow 0.3s ease;
-}
-
-.sectionWithNeonBorder:hover:before {
-  box-shadow: 0 0 20px var(--neon-border-color), 0 0 40px var(--neon-border-color), 0 0 60px var(--neon-border-color);
-}
-
-/* Section de Depoimentos */
+/* Section de Depoimentos - Ultra Futurista */
 .testimonialsSection {
-  margin: var(--spacing-large) auto;
+  padding: 100px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
   text-align: center;
-  background: var(--color-bg-section);
-  padding: var(--spacing-large) var(--spacing-medium);
-  border-radius: var(--border-radius);
-  max-width: 2200px;
-  box-shadow: 0 4px 20px var(--color-shadow);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
   position: relative;
 }
 
-/* Adicionando a classe de borda neon */
-.testimonialsSection.sectionWithNeonBorder {
-  /* Já herda o estilo de borda neon da classe unificada */
-}
-
-/* Título com efeito neon */
+/* Título da seção */
 .testimonialsTitle {
-  margin-bottom: var(--spacing-medium);
-  font-size: 28px;
-  color: var(--color-text-title);
-  text-shadow: 0px 0px 8px var(--color-text-title);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 60px;
+  text-shadow: none;
 }
 
 /* Container de Depoimentos */
 .testimonialsContainer {
-  margin-top: var(--spacing-medium);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
-/* Itens de Depoimentos */
+/* Card de Depoimento */
 .testimonialItem {
-  margin: var(--spacing-small);
-  max-width: 400px;
+  width: 100%;
   text-align: center;
-  padding: var(--spacing-medium);
-  background: var(--color-bg-testimonial);
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px var(--color-shadow);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  padding: 40px 32px;
+  background: linear-gradient(145deg, rgba(26, 26, 36, 0.95), rgba(18, 18, 26, 0.98));
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
+  overflow: hidden;
+}
+
+/* Top glow line */
+.testimonialItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Quote icon */
+.testimonialItem::after {
+  content: '"';
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  font-size: 5rem;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.testimonialItem:hover::before {
+  opacity: 1;
 }
 
 .testimonialItem:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px var(--color-shadow-hover);
+  transform: translateY(-12px);
+  border-color: rgba(0, 212, 255, 0.15);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(0, 212, 255, 0.08);
 }
 
-/* Avatar com efeito hover */
+/* Avatar */
 .testimonialAvatar {
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
-  margin-bottom: var(--spacing-small);
-  box-shadow: 0px 0px 10px rgba(0, 168, 255, 0.4);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  margin: 0 auto 24px;
+  border: 3px solid transparent;
+  background: linear-gradient(#1a1a24, #1a1a24) padding-box,
+              linear-gradient(135deg, #00d4ff, #7c3aed) border-box;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.testimonialAvatar:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 20px var(--color-avatar-hover);
+.testimonialItem:hover .testimonialAvatar {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.25);
 }
 
+/* Texto do depoimento */
 blockquote {
-  font-style: italic;
-  color: var(--color-text-testimonial);
-  margin: var(--spacing-small) 0;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0 0 24px 0;
+  position: relative;
+  z-index: 1;
 }
 
-/* Botão "Saiba Mais" com efeito neon */
-.ctaButton {
-  background-color: var(--color-btn-bg);
-  color: var(--color-text-btn);
-  padding: var(--spacing-small) var(--spacing-medium);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  font-size: 22px;
-  font-weight: bold;
-  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 2px 10px var(--shadow-btn), 0 0 20px rgba(0, 168, 255, 0.5);
-  margin-top: var(--spacing-small);
-}
-
-.ctaButton:hover {
-  background-color: var(--color-btn-hover-bg);
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px var(--shadow-btn-hover), 0 0 40px rgba(0, 168, 255, 0.8);
+/* Nome do cliente */
+.testimonialName {
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.95rem;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .testimonialsContainer {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    /* Espaço entre os depoimentos */
-  }
-
-  .testimonialItem {
-    max-width: 90%;
-    /* Reduzir um pouco a largura */
-    margin: 10px 0;
-    /* Espaçamento entre itens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
-/* Ajustes para mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .testimonialsSection {
+    padding: 60px 20px;
+  }
+
   .testimonialsContainer {
-    gap: 15px;
-    /* Espaçamento menor em telas pequenas */
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .testimonialItem {
-    max-width: 100%;
-    /* Ocupa toda a largura disponível */
-    padding: 15px;
-    /* Reduz o padding interno */
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonialsSection {
+    padding: 40px 16px;
+  }
+
+  .testimonialItem {
+    padding: 28px 20px;
   }
 
   .testimonialAvatar {
-    width: 120px;
-    /* Redução do tamanho do avatar */
-    height: 120px;
-    margin-bottom: 8px;
-    /* Espaço reduzido abaixo do avatar */
+    width: 70px;
+    height: 70px;
   }
 
   blockquote {
-    font-size: 16px;
-    /* Fonte menor para melhor leitura */
-    line-height: 1.6;
-    /* Melhor espaçamento entre linhas */
+    font-size: 0.95rem;
   }
 }

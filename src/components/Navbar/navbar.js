@@ -71,9 +71,8 @@ const Navbar = () => {
 
           {/* Botão de ação (CTA) */}
           <div className={styles.navbarAction}>
-            {/* Chame a função handleContactRedirect ao clicar no botão */}
             <button className={styles.ctaButton} onClick={handleContactRedirect}>
-              Solicite um Orçamento
+              Iniciar Projeto
             </button>
           </div>
         </div>
