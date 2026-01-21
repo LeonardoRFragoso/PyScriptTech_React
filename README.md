@@ -1,72 +1,92 @@
-# Getting Started with Create React App
+# PyScript.tech - Website Institucional
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website institucional e portfólio da **PyScript.tech**, empresa especializada em desenvolvimento de software sob medida, aplicações web e automação de processos.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript)
+![CSS3](https://img.shields.io/badge/CSS3-Modules-1572B6?style=flat&logo=css3)
 
-In the project directory, you can run:
+## Visão Geral
 
-### `npm start`
+Este projeto é o site oficial da PyScript.tech, desenvolvido em React com design moderno e futurista. O site apresenta os serviços oferecidos, portfólio de projetos e formulário de contato integrado com EmailJS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funcionalidades
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Home Page** - Apresentação da empresa com seções de serviços, depoimentos e contato
+- **Página de Serviços** - Detalhamento dos serviços oferecidos (Software Sob Medida, Aplicações Web, Automação & Bots)
+- **Página de Projetos** - Portfólio completo com projetos em destaque e filtro por categoria
+- **Página de Contato** - Formulário completo integrado com EmailJS para envio de orçamentos
+- **Design Responsivo** - Layout adaptável para todos os dispositivos
+- **Animações Modernas** - Efeitos de glassmorphism, gradientes animados e transições suaves
 
-### `npm test`
+## Tecnologias Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React 18** - Biblioteca JavaScript para construção de interfaces
+- **React Router DOM** - Navegação entre páginas (SPA)
+- **CSS Modules** - Estilização modular e escopada
+- **EmailJS** - Integração para envio de emails pelo formulário
+- **Slick Carousel** - Carrossel para seção de depoimentos
 
-### `npm run build`
+## Estrutura do Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── components/
+│   ├── Navbar/          # Barra de navegação
+│   ├── Footer/          # Rodapé
+│   └── ScrollToTop/     # Componente para scroll ao topo
+├── pages/
+│   ├── HomePage/        # Página inicial
+│   │   ├── HeroSection/
+│   │   ├── ServicesSection/
+│   │   ├── TestimonialsSection/
+│   │   └── ContactSection/
+│   ├── Services/        # Página de serviços
+│   ├── ProjectsPage/    # Página de projetos/portfólio
+│   └── ContactPage/     # Página de contato
+├── assets/              # Imagens e recursos
+└── App.js               # Componente principal com rotas
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone o repositório
+git clone https://github.com/LeonardoRFragoso/PyScriptTech_React.git
 
-### `npm run eject`
+# Acesse a pasta do projeto
+cd PyScriptTech_React
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Instale as dependências
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Inicie o servidor de desenvolvimento
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+O projeto será executado em [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Scripts Disponíveis
 
-## Learn More
+| Comando | Descrição |
+|---------|-----------|
+| `npm start` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera build de produção otimizado |
+| `npm test` | Executa os testes |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Configuração do EmailJS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para o formulário de contato funcionar, configure as variáveis do EmailJS em:
+- `src/pages/ContactPage/ContactPage.js`
+- `src/pages/HomePage/ContactSection/ContactSection.js`
 
-### Code Splitting
+## Contato
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Website:** [pyscript.tech](https://pyscript.tech)
+- **Email:** contato@pyscript.tech
+- **WhatsApp:** +55 (21) 98029-2791
+- **LinkedIn:** [PyScript.tech](https://linkedin.com/company/pyscripttech)
 
-### Analyzing the Bundle Size
+## Licença
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# PyScriptTech_Django_React
-# Portf-lio-React
+Este projeto é proprietário da PyScript.tech. Todos os direitos reservados.
