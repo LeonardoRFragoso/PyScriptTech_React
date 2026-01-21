@@ -80,7 +80,9 @@
   gap: 48px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px 100px;
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Contact Info Side */
@@ -90,8 +92,6 @@
   padding: 40px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   height: fit-content;
-  position: sticky;
-  top: 100px;
 }
 
 .infoHeader h2 {
@@ -330,7 +330,7 @@ a.methodInfo:hover {
 .formGroup select {
   cursor: pointer;
   appearance: none;
-  background-image: url( data:image/svg+xml,%3Csvg xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox=0 0 24 24 fill=none stroke=rgba(255,255,255,0.5) stroke-width=2%3E%3Cpolyline points=6 9 12 15 18 9%3E%3C/polyline%3E%3C/svg%3E);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 18px;
@@ -431,7 +431,10 @@ a.methodInfo:hover {
   gap: 24px;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 24px 100px;
+  padding: 60px 24px 120px;
+  position: relative;
+  z-index: 1;
+  background: #0a0a0f;
 }
 
 .featureCard {
@@ -500,7 +503,7 @@ a.methodInfo:hover {
   }
 
   .contactMain {
-    padding: 0 20px 60px;
+    padding: 0 20px 40px;
   }
 
   .contactInfo,
@@ -519,7 +522,7 @@ a.methodInfo:hover {
   .contactFeatures {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 0 20px 60px;
+    padding: 40px 20px 80px;
   }
 
   .featureCard {

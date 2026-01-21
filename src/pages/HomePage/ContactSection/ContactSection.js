@@ -3,15 +3,39 @@ import React, { useState } from 'react';
 import styles from './ContactSection.module.css';
 import emailjs from 'emailjs-com';
 
+const projectTypes = [
+  'Landing Page',
+  'Site Institucional',
+  'E-commerce',
+  'Sistema Web',
+  'Aplicativo',
+  'Automação',
+  'Consultoria',
+  'Outro',
+];
+
+const budgetRanges = [
+  'Até R$ 5.000',
+  'R$ 5.000 - R$ 15.000',
+  'R$ 15.000 - R$ 30.000',
+  'R$ 30.000 - R$ 50.000',
+  'Acima de R$ 50.000',
+  'A definir',
+];
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: '',
+    company: '',
+    projectType: '',
+    budget: '',
+    description: '',
   });
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,22 +44,28 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     emailjs.send('service_mpvslhm', 'template_EmailJS', {
       user_name: formData.name,
       user_email: formData.email,
       user_phone: formData.phone,
-      user_message: formData.message,
+      user_company: formData.company,
+      user_project_type: formData.projectType,
+      user_budget: formData.budget,
+      user_description: formData.description,
     }, 'Wok3mV-Bl-3UNJa9I')
     .then((response) => {
       console.log('Email enviado com sucesso!', response.status, response.text);
-      setSuccessMessage('Mensagem enviada com sucesso!');
+      setSuccessMessage('Mensagem enviada com sucesso! Entraremos em contato em até 24 horas.');
       setErrorMessage('');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', company: '', projectType: '', budget: '', description: '' });
+      setIsSubmitting(false);
     }, (err) => {
       console.error('Falha ao enviar email:', err);
       setErrorMessage('Falha ao enviar a mensagem. Tente novamente mais tarde.');
       setSuccessMessage('');
+      setIsSubmitting(false);
     });
   };
 
@@ -117,82 +147,147 @@ const ContactSection = () => {
 
         {/* Form Card */}
         <div className={styles.formCard}>
+          <div className={styles.formHeader}>
+            <h3>Solicite um Orçamento</h3>
+            <p>Preencha o formulário e entraremos em contato em breve.</p>
+          </div>
+
           <form onSubmit={handleSubmit} className={styles.contactForm}>
-            <div className={styles.inputGroup}>
-              <div className={styles.inputIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
+            <div className={styles.formRow}>
+              <div className={styles.formGroup}>
+                <label htmlFor="name">Nome Completo *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Seu nome"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Como podemos te chamar?"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
+              <div className={styles.formGroup}>
+                <label htmlFor="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seu@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
 
-            <div className={styles.inputGroup}>
-              <div className={styles.inputIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
+            <div className={styles.formRow}>
+              <div className={styles.formGroup}>
+                <label htmlFor="phone">Telefone *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(00) 00000-0000"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Seu melhor e-mail"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+              <div className={styles.formGroup}>
+                <label htmlFor="company">Empresa</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Nome da empresa"
+                  value={formData.company}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
-            <div className={styles.inputGroup}>
-              <div className={styles.inputIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
+            <div className={styles.formRow}>
+              <div className={styles.formGroup}>
+                <label htmlFor="projectType">Tipo de Projeto *</label>
+                <select
+                  id="projectType"
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Selecione uma opção</option>
+                  {projectTypes.map((type, index) => (
+                    <option key={index} value={type}>{type}</option>
+                  ))}
+                </select>
               </div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="WhatsApp ou telefone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
+              <div className={styles.formGroup}>
+                <label htmlFor="budget">Orçamento Estimado</label>
+                <select
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                >
+                  <option value="">Selecione uma faixa</option>
+                  {budgetRanges.map((range, index) => (
+                    <option key={index} value={range}>{range}</option>
+                  ))}
+                </select>
+              </div>
             </div>
 
-            <div className={styles.inputGroup}>
-              <div className={styles.inputIcon} style={{ alignSelf: 'flex-start', marginTop: '18px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              </div>
+            <div className={`${styles.formGroup} ${styles.fullWidth}`}>
+              <label htmlFor="description">Descreva seu Projeto *</label>
               <textarea
-                name="message"
-                placeholder="Descreva seu projeto ou desafio..."
-                value={formData.message}
+                id="description"
+                name="description"
+                rows="5"
+                placeholder="Conte-nos mais sobre sua ideia, objetivos e expectativas..."
+                value={formData.description}
                 onChange={handleChange}
                 required
               />
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="22" y1="2" x2="11" y2="13"/>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-              </svg>
-              Enviar Mensagem
+            <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <span className={styles.spinner}></span>
+                  Enviando...
+                </>
+              ) : (
+                <>
+                  Enviar Mensagem
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <line x1="22" y1="2" x2="11" y2="13"/>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  </svg>
+                </>
+              )}
             </button>
+
+            {successMessage && (
+              <div className={styles.successMessage}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                {successMessage}
+              </div>
+            )}
+            {errorMessage && (
+              <div className={styles.errorMessage}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                {errorMessage}
+              </div>
+            )}
           </form>
-          {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
-          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
         </div>
       </div>
     </section>
