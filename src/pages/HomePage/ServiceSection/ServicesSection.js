@@ -12,26 +12,30 @@ const ServicesSection = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,  // Exibe 1 serviço por vez por padrão
+    slidesToShow: 1,  // Exibe 1 serviço por vez (padrão para todas as telas)
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
+    arrows: false,
+    pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,  // Para telas maiores que 1024px
+        breakpoint: 9999,  // Telas muito grandes
         settings: {
-          slidesToShow: 2,  // Exibe 2 serviços lado a lado no desktop
+          slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
-          arrows: true,  // Mostra setas de navegação
+          arrows: false,
         }
       },
       {
-        breakpoint: 768,  // Em telas menores que 768px (mobile)
+        breakpoint: 768,  // Mobile
         settings: {
-          slidesToShow: 1,  // Mostra 1 serviço por vez no mobile
-          arrows: false,  // Remove as setas no mobile
-          dots: true,  // Exibe os pontos de navegação
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          centerMode: false,
         }
       }
     ]

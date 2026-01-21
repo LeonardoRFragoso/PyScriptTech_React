@@ -2,96 +2,163 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProjectsPage.css'; 
-import project1 from '../../assets/img/project1.png';
-import project2 from '../../assets/img/project2.png';
-import project3 from '../../assets/img/project3.png';
-import project4 from '../../assets/img/project4.png';
-import project5 from '../../assets/img/project5.png';
-import project6 from '../../assets/img/project6.png';
-import video1 from '../../assets/video/video1.mp4';
-import video2 from '../../assets/video/video2.mp4';
-import video3 from '../../assets/video/video3.mp4';
-import video4 from '../../assets/video/video4.mp4';
-import video5 from '../../assets/video/video5.mp4';
-import video6 from '../../assets/video/video6.mp4';
 
 const projectsData = [
   {
     id: 1,
-    title: 'Lions Seminovos',
-    subtitle: 'Landing Page de Alta Conversão',
-    description: 'Página institucional desenvolvida para a maior concessionária de seminovos do Brasil. Design moderno focado em conversão com integração ao sistema de estoque.',
-    category: 'web',
-    technologies: ['React', 'JavaScript', 'SCSS', 'API REST'],
-    results: ['Aumento de 35% nas conversões', 'Tempo de carregamento < 2s'],
-    image: project1,
-    video: video1,
-    featured: true
+    title: 'ProFlow',
+    subtitle: 'Plataforma para Freelancers',
+    description: 'Plataforma web completa para freelancers otimizarem seus negócios. Sistema de gestão de projetos e clientes, integração com IA para otimização de propostas e precificação, dashboard analítico com KPIs de desempenho.',
+    category: 'enterprise',
+    technologies: ['Vue.js', 'JavaScript', 'Node.js', 'Payments API', 'AI Integration'],
+    results: ['Sistema em produção', 'Gestão inteligente de projetos'],
+    image: '/images/proflow/proflow.png',
+    images: ['/images/proflow/proflow.png', '/images/proflow/proflow2.png', '/images/proflow/proflow3.png'],
+    featured: true,
+    liveUrl: 'https://www.proflow.pro/',
+    githubUrl: 'https://github.com/LeonardoRFragoso/ProFlow'
   },
   {
     id: 2,
-    title: 'PyScript.tech',
-    subtitle: 'Site Institucional & Blog',
-    description: 'Nosso próprio site institucional com sistema de blog integrado, área de portfólio dinâmica e formulário de contato inteligente.',
-    category: 'web',
-    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
-    results: ['Design responsivo', 'SEO otimizado'],
-    image: project2,
-    video: video2,
-    featured: true
+    title: 'Base Corporativa',
+    subtitle: 'E-commerce de Roupas Corporativas',
+    description: 'E-commerce completo para venda de uniformes e roupas corporativas. Sistema de carrinho de compras e checkout, gestão de produtos, categorias e estoque, painel administrativo para controle de pedidos.',
+    category: 'enterprise',
+    technologies: ['React', 'Django', 'Python', 'PostgreSQL', 'JavaScript'],
+    results: ['Loja online em produção', 'Interface otimizada para conversão'],
+    image: '/images/base/base1.png',
+    images: ['/images/base/base1.png', '/images/base/base2.png', '/images/base/base3.png'],
+    featured: true,
+    liveUrl: 'https://basecorporativa.store/',
+    githubUrl: 'https://github.com/LeonardoRFragoso/base-corporativa'
   },
   {
     id: 3,
-    title: 'Sistema de Tickets RWE',
-    subtitle: 'Plataforma de Help Desk',
-    description: 'Sistema completo de gestão de tickets de TI para a RWE Telemedicina. Dashboard administrativo, notificações automáticas e relatórios gerenciais.',
-    category: 'software',
-    technologies: ['Python', 'Flask', 'HTML', 'CSS', 'JavaScript', 'SQLite'],
-    results: ['Redução de 50% no tempo de resposta', '+200 tickets/mês processados'],
-    image: project3,
-    video: video3,
-    featured: false
+    title: 'Plataforma APM',
+    subtitle: 'Monitoramento de Performance de Aplicações',
+    description: 'Sistema completo de Application Performance Monitoring. Coleta de métricas, logs e traces em tempo real. Alertas automáticos e dashboards customizáveis. Arquitetura preparada para alto volume de dados.',
+    category: 'enterprise',
+    technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Grafana'],
+    results: ['Monitoramento em tempo real', 'Solução enterprise para observabilidade'],
+    image: '/images/APM/APM1.png',
+    images: ['/images/APM/APM1.png', '/images/APM/APM2.png', '/images/APM/APM3.png', '/images/APM/APM4.png', '/images/APM/APM5.png'],
+    featured: false,
+    githubUrl: 'https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs'
   },
   {
     id: 4,
-    title: 'FileConvert Pro',
-    subtitle: 'Conversor Universal de Arquivos',
-    description: 'Aplicação web para conversão de arquivos entre múltiplos formatos. Interface intuitiva com preview em tempo real e processamento em nuvem.',
-    category: 'web',
-    technologies: ['React', 'Tailwind CSS', 'Shadcn/UI', 'CloudConvert API'],
-    results: ['Suporte a +50 formatos', 'Conversões ilimitadas'],
-    image: project4,
-    video: video4,
-    featured: false
+    title: 'FinanceControl',
+    subtitle: 'Gestão Financeira Pessoal',
+    description: 'Sistema full-stack com interface moderna e intuitiva. Gerenciamento completo de transações e categorias. Dashboard com análises e gráficos em tempo real. Relatórios customizáveis por período.',
+    category: 'software',
+    technologies: ['React', 'Django', 'REST API', 'PostgreSQL'],
+    results: ['71 commits de desenvolvimento iterativo', 'Dashboard analítico completo'],
+    image: '/images/FinanceControl/financecontrol1.png',
+    images: ['/images/FinanceControl/financecontrol1.png', '/images/FinanceControl/financecontrol2.png', '/images/FinanceControl/financecontrol5.png', '/images/FinanceControl/financecontrol6.png'],
+    featured: false,
+    githubUrl: 'https://github.com/LeonardoRFragoso/gerenciador-financeiro'
   },
   {
     id: 5,
-    title: 'SGE - Gestão de Equipamentos',
-    subtitle: 'Sistema de Gestão Empresarial',
-    description: 'Sistema completo para controle de ativos de TI. Cadastro de equipamentos, histórico de manutenções, alertas de garantia e relatórios.',
-    category: 'software',
-    technologies: ['Python', 'Streamlit', 'SQLite', 'Pandas'],
-    results: ['Controle de +500 ativos', 'Dashboard em tempo real'],
-    image: project5,
-    video: video5,
-    featured: false
+    title: 'MedFlow',
+    subtitle: 'Sistema de Gestão Médica',
+    description: 'Plataforma completa para gestão de clínicas e consultórios médicos. Agendamento de consultas, prontuário eletrônico, gestão de pacientes e relatórios médicos.',
+    category: 'enterprise',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
+    results: ['Gestão completa de pacientes', 'Prontuário eletrônico integrado'],
+    image: '/images/medflow/medflow1.png',
+    images: ['/images/medflow/medflow1.png', '/images/medflow/medflow2.png', '/images/medflow/medflow3.png', '/images/medflow/medflow4.png'],
+    featured: true
   },
   {
     id: 6,
-    title: 'InvestAnalyzer',
-    subtitle: 'Análise de Ações & FIIs',
-    description: 'Ferramenta de análise fundamentalista para investidores. Comparador de ativos, indicadores técnicos, histórico de dividendos e simulador de carteira.',
+    title: 'SaaS Platform',
+    subtitle: 'Plataforma de Software como Serviço',
+    description: 'Sistema SaaS multi-tenant com dashboard administrativo, gestão de assinaturas, billing automatizado e analytics avançado para monitoramento de métricas de negócio.',
+    category: 'enterprise',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe API'],
+    results: ['Multi-tenant architecture', 'Billing automatizado'],
+    image: '/images/SaaS/1SaaS - 1.png',
+    images: ['/images/SaaS/1SaaS - 1.png', '/images/SaaS/1SaaS - 2.png', '/images/SaaS/1SaaS - 3.png', '/images/SaaS/1SaaS - 4.png'],
+    featured: false
+  },
+  {
+    id: 7,
+    title: 'Dashboard de Multas',
+    subtitle: 'Sistema de Gestão de Infrações',
+    description: 'Dashboard analítico para gestão e acompanhamento de multas de trânsito. Visualização de dados, relatórios gerenciais e alertas automáticos de vencimento.',
     category: 'software',
-    technologies: ['Python', 'Streamlit', 'SQLite', 'APIs Financeiras'],
-    results: ['Análise de +400 ativos', 'Dados em tempo real'],
-    image: project6,
-    video: video6,
+    technologies: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
+    results: ['Visualização de dados em tempo real', 'Relatórios automatizados'],
+    image: '/images/dash-multas/1.jpg',
+    images: ['/images/dash-multas/1.jpg', '/images/dash-multas/2.jpg', '/images/dash-multas/3.jpg', '/images/dash-multas/4.jpg'],
+    featured: false
+  },
+  {
+    id: 8,
+    title: 'Gestão de Pátio',
+    subtitle: 'Sistema de Controle Logístico',
+    description: 'Sistema de gestão de pátio para controle de entrada e saída de veículos, monitoramento de cargas e otimização de operações logísticas.',
+    category: 'software',
+    technologies: ['Python', 'Flask', 'SQLite', 'JavaScript'],
+    results: ['Controle de veículos em tempo real', 'Otimização de operações'],
+    image: '/images/Pátio/1.jpg',
+    images: ['/images/Pátio/1.jpg', '/images/Pátio/2.jpg', '/images/Pátio/3.jpg', '/images/Pátio/4.jpg'],
+    featured: false
+  },
+  {
+    id: 9,
+    title: 'TVs ICTSI',
+    subtitle: 'Sistema de Display Digital',
+    description: 'Sistema de gerenciamento de displays digitais para o Porto do Rio de Janeiro. Exibição de informações operacionais, dashboards e comunicação interna em tempo real.',
+    category: 'enterprise',
+    technologies: ['Python', 'React', 'WebSockets', 'PostgreSQL'],
+    results: ['Displays em tempo real', 'Gestão centralizada'],
+    image: '/images/Tvs-ICTSI/1.jpg',
+    images: ['/images/Tvs-ICTSI/1.jpg', '/images/Tvs-ICTSI/2.jpg', '/images/Tvs-ICTSI/3.jpg', '/images/Tvs-ICTSI/4.jpg'],
+    featured: true
+  },
+  {
+    id: 10,
+    title: 'GR - Gestão de Recursos',
+    subtitle: 'Sistema de Gestão Empresarial',
+    description: 'Sistema completo de gestão de recursos empresariais. Controle de inventário, gestão de equipes, relatórios gerenciais e indicadores de desempenho.',
+    category: 'enterprise',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
+    results: ['Gestão integrada de recursos', 'KPIs em tempo real'],
+    image: '/images/GR/1.jpg',
+    images: ['/images/GR/1.jpg', '/images/GR/2.jpg', '/images/GR/3.jpg', '/images/GR/4.jpg'],
+    featured: false
+  },
+  {
+    id: 11,
+    title: 'Andaimes Pini',
+    subtitle: 'Sistema de Gestão de Locação',
+    description: 'Plataforma de gestão para empresa de locação de andaimes. Controle de estoque, agendamento de entregas, gestão de contratos e faturamento.',
+    category: 'enterprise',
+    technologies: ['Python', 'Django', 'Bootstrap', 'PostgreSQL'],
+    results: ['Gestão de contratos', 'Controle de estoque integrado'],
+    image: '/images/Andaimes Pini/pini1.png',
+    images: ['/images/Andaimes Pini/pini1.png', '/images/Andaimes Pini/pini2.png', '/images/Andaimes Pini/pini3.png', '/images/Andaimes Pini/pini4.png'],
+    featured: false
+  },
+  {
+    id: 12,
+    title: 'Não Conformidade',
+    subtitle: 'Sistema de Gestão de Qualidade',
+    description: 'Sistema para registro e acompanhamento de não conformidades. Workflow de aprovação, ações corretivas, relatórios de qualidade e indicadores ISO.',
+    category: 'software',
+    technologies: ['Python', 'Flask', 'SQLite', 'JavaScript'],
+    results: ['Gestão de qualidade ISO', 'Workflow automatizado'],
+    image: '/images/não-conformidade/1.jpg',
+    images: ['/images/não-conformidade/1.jpg', '/images/não-conformidade/2.jpg', '/images/não-conformidade/3.jpg', '/images/não-conformidade/4.jpg'],
     featured: false
   }
 ];
 
 const categories = [
   { id: 'all', label: 'Todos' },
+  { id: 'enterprise', label: 'Enterprise' },
   { id: 'web', label: 'Web' },
   { id: 'software', label: 'Software' },
 ];
@@ -126,11 +193,11 @@ const ProjectsPage = () => {
         {/* Stats */}
         <div className="heroStats">
           <div className="statItem">
-            <span className="statNumber">50+</span>
+            <span className="statNumber">70+</span>
             <span className="statLabel">Projetos Entregues</span>
           </div>
           <div className="statItem">
-            <span className="statNumber">6</span>
+            <span className="statNumber">12</span>
             <span className="statLabel">Setores Atendidos</span>
           </div>
           <div className="statItem">
@@ -163,7 +230,9 @@ const ProjectsPage = () => {
                 </div>
               </div>
               <div className="featuredContent">
-                <span className="projectCategory">{project.category === 'web' ? 'Aplicação Web' : 'Software'}</span>
+                <span className="projectCategory">
+                  {project.category === 'web' ? 'Aplicação Web' : project.category === 'enterprise' ? 'Enterprise' : 'Software'}
+                </span>
                 <h3>{project.title}</h3>
                 <p className="projectSubtitle">{project.subtitle}</p>
                 <p className="projectDesc">{project.description}</p>
@@ -181,6 +250,26 @@ const ProjectsPage = () => {
                       {result}
                     </span>
                   ))}
+                </div>
+                <div className="projectLinks">
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="projectLink liveLink">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                      </svg>
+                      Ver Online
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="projectLink githubLink">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      GitHub
+                    </a>
+                  )}
                 </div>
               </div>
               {expandedVideo === project.id && (
@@ -240,7 +329,9 @@ const ProjectsPage = () => {
                 </div>
               </div>
               <div className="cardContent">
-                <span className="projectCategory">{project.category === 'web' ? 'Web' : 'Software'}</span>
+                <span className="projectCategory">
+                  {project.category === 'web' ? 'Web' : project.category === 'enterprise' ? 'Enterprise' : 'Software'}
+                </span>
                 <h3 className="cardTitle">{project.title}</h3>
                 <p className="cardSubtitle">{project.subtitle}</p>
                 <div className="techTags">

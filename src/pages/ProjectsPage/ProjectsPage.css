@@ -287,6 +287,52 @@
   flex-shrink: 0;
 }
 
+/* Project Links */
+.projectLinks {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.liveLink {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 255, 204, 0.15));
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+}
+
+.liveLink:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(0, 255, 204, 0.25));
+  border-color: rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+}
+
+.githubLink {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.githubLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 /* Video Expanded */
 .videoExpanded {
   position: absolute;

@@ -27,7 +27,7 @@ const servicesData = [
       { icon: "🛡️", text: "Segurança e backup automatizado" },
       { icon: "📈", text: "Escalável conforme seu crescimento" }
     ],
-    technologies: ["Python", "Node.js", "PostgreSQL", "Docker", "AWS"],
+    technologies: ["Python", "Django", "FastAPI", "Node.js", "PostgreSQL", "Docker", "Java", "Spring Boot"],
     image: serviceImage1,
   },
   {
@@ -48,7 +48,7 @@ const servicesData = [
       { icon: "📱", text: "100% responsivo em todos dispositivos" },
       { icon: "🎯", text: "Aumento médio de 45% em conversões" }
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind", "Vercel"],
+    technologies: ["React", "Vue.js", "Next.js", "TypeScript", "Tailwind", "JavaScript ES6+"],
     image: serviceImage2,
   },
   {
@@ -69,16 +69,16 @@ const servicesData = [
       { icon: "⏰", text: "Atendimento 24/7 sem interrupção" },
       { icon: "📊", text: "Relatórios e métricas detalhadas" }
     ],
-    technologies: ["Python", "OpenAI", "Selenium", "Twilio", "n8n"],
+    technologies: ["Python", "Selenium", "Puppeteer", "BeautifulSoup", "RPA", "OpenAI"],
     image: serviceImage3,
   },
 ];
 
 const statsData = [
-  { number: "50+", label: "Projetos Entregues" },
+  { number: "70+", label: "Projetos Entregues" },
   { number: "98%", label: "Clientes Satisfeitos" },
   { number: "24h", label: "Tempo de Resposta" },
-  { number: "3x", label: "Mais Produtividade" },
+  { number: "2", label: "Sistemas em Produção" },
 ];
 
 const processSteps = [
@@ -231,8 +231,8 @@ const ServicesPage = () => {
               </div>
 
               <button className="cardButton" onClick={() => navigate('/contact')}>
-                Solicitar Proposta
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <span>Solicitar Proposta</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </button>
@@ -309,8 +309,8 @@ const ServicesPage = () => {
           </p>
           <div className="ctaButtons">
             <button className="ctaButton" onClick={() => navigate('/contact')}>
-              Agendar Conversa
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <span>Agendar Conversa</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </button>

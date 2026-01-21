@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Navbar from './components/Navbar/navbar'; // Certifique-se que o caminho e nome do arquivo estão corretos
 import HomePage from './pages/HomePage/HomePage'; // Certifique-se que o caminho e nome do arquivo estão corretos
 import ServicesPage from './pages/Services/ServicesPage'; // Certifique-se que o caminho e nome do arquivo estão corretos
@@ -15,6 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container"> {/* Envolva todo o conteúdo em um container */}
         <Navbar /> {/* Navbar que navega entre as páginas */}
         <main> {/* Tag semântica para o conteúdo principal */}
