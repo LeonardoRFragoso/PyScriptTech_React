@@ -1,0 +1,58 @@
+.ds-card {
+  background: rgba(26, 26, 36, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ds-card--hover:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.ds-card--hover:hover::before {
+  opacity: 1;
+}
+
+.ds-card--glow {
+  box-shadow: 0 4px 24px rgba(0, 212, 255, 0.2);
+}
+
+.ds-card--glow:hover {
+  box-shadow: 0 8px 40px rgba(0, 212, 255, 0.3);
+}
+
+.ds-card--gradient {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.ds-card__header {
+  margin-bottom: 1rem;
+}
+
+.ds-card__body {
+  flex: 1;
+}
+
+.ds-card__footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

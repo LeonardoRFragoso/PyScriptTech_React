@@ -1,6 +1,9 @@
 // src/pages/Services/ServicesPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../../components/SEO/SEO';
+import ComparisonSection from './ComparisonSection/ComparisonSection';
+import ServiceUrgencySection from './ServiceUrgencySection/ServiceUrgencySection';
 import './ServicesPage.css';
 
 // Importação das imagens
@@ -133,20 +136,36 @@ const processSteps = [
 
 const faqData = [
   {
-    question: "Quanto tempo leva para desenvolver um projeto?",
-    answer: "Depende da complexidade. Um site institucional leva de 2-4 semanas. Sistemas mais complexos podem levar de 2-6 meses. Sempre fornecemos um cronograma detalhado antes de iniciar."
+    question: "Quanto tempo leva para desenvolver um projeto completo?",
+    answer: "Depende da complexidade. Landing pages e sites institucionais ficam prontos em 7-15 dias. E-commerces e sistemas web customizados levam de 30 a 60 dias. Sistemas enterprise complexos de 2-4 meses. Trabalhamos com metodologia ágil, então você vê progresso semanalmente e pode solicitar ajustes durante o desenvolvimento."
   },
   {
-    question: "Vocês oferecem suporte após a entrega?",
-    answer: "Sim! Todos os projetos incluem 30 dias de suporte gratuito. Depois, oferecemos planos de manutenção mensal que incluem atualizações, correções e melhorias contínuas."
+    question: "Qual o investimento necessário para cada tipo de serviço?",
+    answer: "Software sob medida: R$ 15.000 a R$ 80.000+ | Aplicações web: R$ 5.000 a R$ 30.000 | Automações e bots: R$ 3.000 a R$ 25.000. Oferecemos parcelamento em até 12x e possibilidade de pagamento por etapas. Agende uma consultoria gratuita para receber um orçamento personalizado."
+  },
+  {
+    question: "Vocês oferecem garantia e suporte após a entrega?",
+    answer: "Sim! Oferecemos 30 dias de garantia total - se não ficar satisfeito, devolvemos 100% do investimento. Além disso, incluímos suporte técnico vitalício sem custo adicional para bugs e correções. Também oferecemos planos de manutenção mensal (a partir de R$ 500/mês) para evoluções e novos recursos."
+  },
+  {
+    question: "Quais tecnologias vocês utilizam?",
+    answer: "Somos especialistas em React, Vue.js, Next.js para frontend | Node.js, Python/Django, Java/Spring Boot para backend | PostgreSQL, MongoDB para bancos de dados | AWS, Docker, Kubernetes para infraestrutura. Mas nos adaptamos às suas necessidades! Se você já tem uma stack, podemos trabalhar com ela."
   },
   {
     question: "Como funciona o processo de pagamento?",
-    answer: "Trabalhamos com 40% de entrada para iniciar o projeto e 60% na entrega final. Para projetos maiores, podemos dividir em mais parcelas conforme os milestones."
+    answer: "Trabalhamos com 40% de entrada para iniciar o projeto, 30% no meio do desenvolvimento e 30% na entrega final. Para projetos maiores, podemos dividir em mais parcelas conforme os milestones. Aceitamos PIX, transferência bancária e cartão de crédito em até 12x."
   },
   {
-    question: "Posso acompanhar o desenvolvimento do projeto?",
-    answer: "Com certeza! Utilizamos metodologia ágil com entregas semanais. Você terá acesso a um ambiente de preview e reuniões regulares de alinhamento."
+    question: "Posso fazer alterações durante o desenvolvimento?",
+    answer: "Absolutamente! Nossa metodologia ágil permite ajustes durante todo o processo. Fazemos reuniões semanais de alinhamento onde você pode solicitar mudanças. Alterações dentro do escopo não geram custos extras. Para mudanças significativas fora do escopo, apresentamos um orçamento complementar transparente."
+  },
+  {
+    question: "O que acontece após o projeto ser entregue?",
+    answer: "Após a entrega, você recebe todo o código-fonte, documentação completa e treinamento da equipe. Continuamos disponíveis para suporte técnico vitalício. Muitos clientes optam por contratos de manutenção mensal para evoluções contínuas, hospedagem gerenciada e monitoramento proativo."
+  },
+  {
+    question: "Vocês trabalham com empresas de qual porte?",
+    answer: "Atendemos desde startups e pequenas empresas até grandes corporações. Nosso portfólio inclui projetos para o Porto do Rio de Janeiro (ICTSI), e-commerces de médio porte, além de sistemas internos para empresas de diversos setores. Cada projeto recebe atenção personalizada independente do tamanho."
   },
 ];
 
@@ -158,19 +177,90 @@ const ServicesPage = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // Schema.org structured data
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Software Development Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "PyScript.tech",
+      "url": "https://pyscript.tech",
+      "logo": "https://pyscript.tech/images/Leo-Perfil.png",
+      "telephone": "+55-21-98029-2791",
+      "email": "contato@pyscript.tech",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "70"
+      }
+    },
+    "areaServed": "BR",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Desenvolvimento",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Software Sob Medida",
+            "description": "Desenvolvimento de sistemas personalizados"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Aplicações Web",
+            "description": "Sites e aplicações web de alta performance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Automação & Bots",
+            "description": "Bots inteligentes e automações"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="servicesPage">
-      {/* Hero Section */}
-      <section className="servicesHero">
+    <>
+      <SEO
+        title="Serviços de Desenvolvimento - Software Sob Medida que Aumenta Receita | PyScript.tech"
+        description="Software sob medida, aplicações web de alta conversão e automações inteligentes. ROI de 300% em 6 meses. Entrega em 30 dias. Garantia de satisfação."
+        url="https://pyscript.tech/services"
+        keywords="desenvolvimento de software, software sob medida, aplicações web, automação de processos, desenvolvimento react, desenvolvimento django, software house"
+      />
+      
+      {/* Schema.org JSON-LD */}
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
+      <div className="servicesPage">
+        {/* Hero Section */}
+        <section className="servicesHero">
         <div className="heroContent">
-          <span className="heroBadge">Nossas Soluções</span>
+          <span className="heroBadge">🚀 Serviços que Geram ROI Comprovado</span>
           <h1>
-            Tecnologia que impulsiona
-            <span>resultados reais</span>
+            Soluções Sob Medida que
+            <span>Aumentam Receita e Reduzem Custos</span>
           </h1>
           <p>
-            Cada projeto é único. Por isso, desenvolvemos soluções personalizadas 
-            que se adaptam às necessidades específicas do seu negócio.
+            Software personalizado, aplicações web de alta conversão e automações inteligentes. 
+            <strong>Entregamos tecnologia que se paga sozinha em até 6 meses</strong> através de 
+            aumento de vendas e redução de custos operacionais.
           </p>
         </div>
 
@@ -263,6 +353,9 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      {/* Comparison Section */}
+      <ComparisonSection />
+
       {/* FAQ Section */}
       <section className="faqSection">
         <div className="sectionHeader">
@@ -299,6 +392,9 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      {/* Urgency Section */}
+      <ServiceUrgencySection />
+
       {/* CTA Section */}
       <section className="servicesCTA">
         <div className="ctaContent">
@@ -328,7 +424,8 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

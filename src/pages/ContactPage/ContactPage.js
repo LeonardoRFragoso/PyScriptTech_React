@@ -1,5 +1,6 @@
 // src/pages/ContactPage/ContactPage.js
 import React, { useState } from 'react';
+import SEO from '../../components/SEO/SEO';
 import './ContactPage.css';
 import emailjs from 'emailjs-com';
 
@@ -116,9 +117,15 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="contactPage">
-      {/* Hero Section */}
-      <section className="contactHero">
+    <>
+      <SEO
+        title="Contato - Entre em Contato com Nossa Equipe"
+        description="Entre em contato conosco para discutir seu projeto. Respondemos em até 24 horas. WhatsApp, email ou agende uma reunião."
+        url="https://pyscript.tech/contact"
+      />
+      <div className="contactPage">
+        {/* Hero Section */}
+        <section className="contactHero">
         <div className="heroContent">
           <span className="heroBadge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -356,6 +363,31 @@ const ContactPage = () => {
         </div>
       </section>
 
+      {/* Calendly Section */}
+      <section className="calendlySection">
+        <div className="calendlyContent">
+          <h2>Prefere Agendar uma Reunião?</h2>
+          <p>
+            Escolha o melhor horário na sua agenda para conversarmos sobre seu projeto.
+            É rápido, fácil e sem compromisso.
+          </p>
+          <a 
+            href="https://calendly.com/pyscripttech" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="calendlyButton"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Agendar Reunião Gratuita
+          </a>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="contactFeatures">
         <div className="featureCard">
@@ -391,7 +423,8 @@ const ContactPage = () => {
           <p>Receba um orçamento completo com escopo e prazos definidos.</p>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -15,16 +15,16 @@ const IntroSection = () => {
     <section className={styles.introSection}>
       <div className={styles.introContent}>
         <div className={styles.badge}>
-          Software House • Rio de Janeiro
+          🚀 Software House • Rio de Janeiro • +70 Projetos Entregues
         </div>
         <h1>
-          Do código à conquista:
-          <span>transformamos ideias em realidade</span>
+          Transforme Sua Ideia em um
+          <span>Sistema que Gera Resultados Reais</span>
         </h1>
         <p>
-          Somos especialistas em criar soluções digitais que impulsionam resultados. 
-          Websites de alta conversão, sistemas sob medida e automações que 
-          trabalham enquanto você foca no que importa.
+          Desenvolvemos software sob medida que aumenta sua receita, reduz custos operacionais 
+          e automatiza processos. De e-commerce de alta conversão a sistemas enterprise escaláveis 
+          — <strong>entregamos em até 30 dias com garantia de satisfação</strong>.
         </p>
         <div className={styles.ctaWrapper}>
           <button className={styles.ctaButton} onClick={handleCTAClick}>

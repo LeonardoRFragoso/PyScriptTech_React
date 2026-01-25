@@ -1,6 +1,7 @@
 // src/pages/ProjectsPage/ProjectsPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../../components/SEO/SEO';
 import './ProjectsPage.css'; 
 
 const projectsData = [
@@ -12,8 +13,8 @@ const projectsData = [
     category: 'enterprise',
     technologies: ['Vue.js', 'JavaScript', 'Node.js', 'Payments API', 'AI Integration'],
     results: ['Sistema em produção', 'Gestão inteligente de projetos'],
-    image: '/images/proflow/proflow.png',
-    images: ['/images/proflow/proflow.png', '/images/proflow/proflow2.png', '/images/proflow/proflow3.png'],
+    image: `${process.env.PUBLIC_URL}/images/proflow/proflow.png`,
+    images: [`${process.env.PUBLIC_URL}/images/proflow/proflow.png`, `${process.env.PUBLIC_URL}/images/proflow/proflow2.png`, `${process.env.PUBLIC_URL}/images/proflow/proflow3.png`],
     featured: true,
     liveUrl: 'https://www.proflow.pro/',
     githubUrl: 'https://github.com/LeonardoRFragoso/ProFlow'
@@ -26,8 +27,8 @@ const projectsData = [
     category: 'enterprise',
     technologies: ['React', 'Django', 'Python', 'PostgreSQL', 'JavaScript'],
     results: ['Loja online em produção', 'Interface otimizada para conversão'],
-    image: '/images/base/base1.png',
-    images: ['/images/base/base1.png', '/images/base/base2.png', '/images/base/base3.png'],
+    image: `${process.env.PUBLIC_URL}/images/base/base1.png`,
+    images: [`${process.env.PUBLIC_URL}/images/base/base1.png`, `${process.env.PUBLIC_URL}/images/base/base2.png`, `${process.env.PUBLIC_URL}/images/base/base3.png`],
     featured: true,
     liveUrl: 'https://basecorporativa.store/',
     githubUrl: 'https://github.com/LeonardoRFragoso/base-corporativa'
@@ -53,8 +54,8 @@ const projectsData = [
     category: 'software',
     technologies: ['React', 'Django', 'REST API', 'PostgreSQL'],
     results: ['71 commits de desenvolvimento iterativo', 'Dashboard analítico completo'],
-    image: '/images/FinanceControl/financecontrol1.png',
-    images: ['/images/FinanceControl/financecontrol1.png', '/images/FinanceControl/financecontrol2.png', '/images/FinanceControl/financecontrol5.png', '/images/FinanceControl/financecontrol6.png'],
+    image: `${process.env.PUBLIC_URL}/images/FinanceControl/financecontrol1.png`,
+    images: [`${process.env.PUBLIC_URL}/images/FinanceControl/financecontrol1.png`, `${process.env.PUBLIC_URL}/images/FinanceControl/financecontrol2.png`, `${process.env.PUBLIC_URL}/images/FinanceControl/financecontrol5.png`, `${process.env.PUBLIC_URL}/images/FinanceControl/financecontrol6.png`],
     featured: false,
     githubUrl: 'https://github.com/LeonardoRFragoso/gerenciador-financeiro'
   },
@@ -66,8 +67,8 @@ const projectsData = [
     category: 'enterprise',
     technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
     results: ['Gestão completa de pacientes', 'Prontuário eletrônico integrado'],
-    image: '/images/medflow/medflow1.png',
-    images: ['/images/medflow/medflow1.png', '/images/medflow/medflow2.png', '/images/medflow/medflow3.png', '/images/medflow/medflow4.png'],
+    image: `${process.env.PUBLIC_URL}/images/medflow/medflow1.png`,
+    images: [`${process.env.PUBLIC_URL}/images/medflow/medflow1.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow2.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow3.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow4.png`],
     featured: true
   },
   {
@@ -90,8 +91,8 @@ const projectsData = [
     category: 'software',
     technologies: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
     results: ['Visualização de dados em tempo real', 'Relatórios automatizados'],
-    image: '/images/dash-multas/1.jpg',
-    images: ['/images/dash-multas/1.jpg', '/images/dash-multas/2.jpg', '/images/dash-multas/3.jpg', '/images/dash-multas/4.jpg'],
+    image: `${process.env.PUBLIC_URL}/images/dash-multas/1.jpg`,
+    images: [`${process.env.PUBLIC_URL}/images/dash-multas/1.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/2.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/3.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/4.jpg`],
     featured: false
   },
   {
@@ -114,8 +115,8 @@ const projectsData = [
     category: 'enterprise',
     technologies: ['Python', 'React', 'WebSockets', 'PostgreSQL'],
     results: ['Displays em tempo real', 'Gestão centralizada'],
-    image: '/images/Tvs-ICTSI/1.jpg',
-    images: ['/images/Tvs-ICTSI/1.jpg', '/images/Tvs-ICTSI/2.jpg', '/images/Tvs-ICTSI/3.jpg', '/images/Tvs-ICTSI/4.jpg'],
+    image: `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/1.jpg`,
+    images: [`${process.env.PUBLIC_URL}/images/Tvs-ICTSI/1.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/2.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/3.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/4.jpg`],
     featured: true
   },
   {
@@ -175,9 +176,15 @@ const ProjectsPage = () => {
   const featuredProjects = projectsData.filter(p => p.featured);
 
   return (
-    <div className="projectsPage">
-      {/* Hero Section */}
-      <section className="projectsHero">
+    <>
+      <SEO
+        title="Portfólio - Projetos que Geram Resultados"
+        description="Conheça nosso portfólio de projetos. Cases de sucesso em desenvolvimento web, sistemas enterprise e automações para diversos setores."
+        url="https://pyscript.tech/projects"
+      />
+      <div className="projectsPage">
+        {/* Hero Section */}
+        <section className="projectsHero">
         <div className="heroContent">
           <span className="heroBadge">Nosso Portfólio</span>
           <h1>
@@ -392,7 +399,8 @@ const ProjectsPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

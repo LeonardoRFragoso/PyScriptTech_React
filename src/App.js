@@ -1,35 +1,43 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import Navbar from './components/Navbar/navbar'; // Certifique-se que o caminho e nome do arquivo estão corretos
-import HomePage from './pages/HomePage/HomePage'; // Certifique-se que o caminho e nome do arquivo estão corretos
-import ServicesPage from './pages/Services/ServicesPage'; // Certifique-se que o caminho e nome do arquivo estão corretos
-import ProjectsPage from './pages/ProjectsPage/ProjectsPage'; // Certifique-se que o caminho e nome do arquivo estão corretos
-import ContactPage from './pages/ContactPage/ContactPage'; // Nova página de contato
-import Footer from './components/Footer/footer'; // Certifique-se que o caminho e nome do arquivo estão corretos e o arquivo existe
+import Navbar from './components/Navbar/navbar';
+import HomePage from './pages/HomePage/HomePage';
+import ServicesPage from './pages/Services/ServicesPage';
+import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
+import ContactPage from './pages/ContactPage/ContactPage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import BlogPage from './pages/BlogPage/BlogPage';
+import Footer from './components/Footer/footer';
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
-// Importação dos estilos do carrossel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app-container"> {/* Envolva todo o conteúdo em um container */}
-        <Navbar /> {/* Navbar que navega entre as páginas */}
-        <main> {/* Tag semântica para o conteúdo principal */}
-          <Routes>
-            <Route path="/" element={<HomePage />} /> {/* Página inicial */}
-            <Route path="/services" element={<ServicesPage />} /> {/* Página de serviços */}
-            <Route path="/projects" element={<ProjectsPage />} /> {/* Página de projetos */}
-            <Route path="/contact" element={<ContactPage />} /> {/* Nova página de contato */}
-          </Routes>
-        </main>
-        <Footer /> {/* Rodapé da página */}
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="app-container">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 
