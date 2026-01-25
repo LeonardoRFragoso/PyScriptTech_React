@@ -26,7 +26,7 @@ const BlogPage = () => {
       author: 'Leonardo Fragoso',
       date: '2024-01-15',
       readTime: '8 min',
-      image: '/images/blog/tech-stack.jpg',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
       featured: true,
       tags: ['Python', 'React', 'Arquitetura', 'Boas Práticas'],
     },
@@ -38,7 +38,7 @@ const BlogPage = () => {
       author: 'Leonardo Fragoso',
       date: '2024-01-10',
       readTime: '6 min',
-      image: '/images/blog/trends-2024.jpg',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop',
       featured: true,
       tags: ['Web Development', 'Tendências', 'IA', 'Next.js'],
     },
@@ -50,7 +50,7 @@ const BlogPage = () => {
       author: 'Leonardo Fragoso',
       date: '2024-01-05',
       readTime: '10 min',
-      image: '/images/blog/case-ecommerce.jpg',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
       featured: true,
       tags: ['Automação', 'E-commerce', 'Case', 'ROI'],
     },
@@ -62,7 +62,7 @@ const BlogPage = () => {
       author: 'Leonardo Fragoso',
       date: '2024-01-01',
       readTime: '7 min',
-      image: '/images/blog/python-vs-node.jpg',
+      image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=600&fit=crop',
       featured: false,
       tags: ['Python', 'Node.js', 'Backend', 'Comparação'],
     },
@@ -74,7 +74,7 @@ const BlogPage = () => {
       author: 'Leonardo Fragoso',
       date: '2023-12-28',
       readTime: '12 min',
-      image: '/images/blog/ideia-software.jpg',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop',
       featured: false,
       tags: ['MVP', 'Startup', 'Produto', 'Negócios'],
     },
@@ -86,7 +86,7 @@ const BlogPage = () => {
       author: 'Leonardo Fragoso',
       date: '2023-12-20',
       readTime: '9 min',
-      image: '/images/blog/fullstack-career.jpg',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
       featured: false,
       tags: ['Carreira', 'Full Stack', 'Roadmap', 'Aprendizado'],
     },
@@ -173,9 +173,8 @@ const BlogPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="postImage">
-                  <div className="imagePlaceholder">
-                    <span className="categoryLabel">{categories.find(c => c.id === post.category)?.label}</span>
-                  </div>
+                  <img src={post.image} alt={post.title} />
+                  <span className="categoryLabel">{categories.find(c => c.id === post.category)?.label}</span>
                 </div>
                 <div className="postContent">
                   <div className="postMeta">
@@ -231,9 +230,8 @@ const BlogPage = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
               <div className="cardImage">
-                <div className="imagePlaceholder">
-                  <span className="categoryLabel">{categories.find(c => c.id === post.category)?.label}</span>
-                </div>
+                <img src={post.image} alt={post.title} />
+                <span className="categoryLabel">{categories.find(c => c.id === post.category)?.label}</span>
               </div>
               <div className="cardContent">
                 <div className="postMeta">
