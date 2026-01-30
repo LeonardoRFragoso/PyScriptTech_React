@@ -242,8 +242,10 @@ const ProjectsPage = () => {
                     className="playButton"
                     onClick={() => setExpandedVideo(expandedVideo === project.id ? null : project.id)}
                   >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
                     </svg>
                   </button>
                 </div>
@@ -291,19 +293,6 @@ const ProjectsPage = () => {
                   )}
                 </div>
               </div>
-              {expandedVideo === project.id && (
-                <div className="videoExpanded">
-                  <video controls autoPlay>
-                    <source src={project.video} type="video/mp4" />
-                  </video>
-                  <button className="closeVideo" onClick={() => setExpandedVideo(null)}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </button>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -340,10 +329,12 @@ const ProjectsPage = () => {
                     className="watchVideo"
                     onClick={() => setExpandedVideo(expandedVideo === project.id ? null : project.id)}
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
                     </svg>
-                    Ver Demo
+                    Ver Galeria
                   </button>
                 </div>
               </div>
@@ -362,24 +353,28 @@ const ProjectsPage = () => {
                   )}
                 </div>
               </div>
-              {expandedVideo === project.id && (
-                <div className="videoModal">
-                  <div className="videoWrapper">
-                    <video controls autoPlay>
-                      <source src={project.video} type="video/mp4" />
-                    </video>
-                    <button className="closeVideo" onClick={() => setExpandedVideo(null)}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
+
+        {/* Gallery Modal - Outside the map loop */}
+        {expandedVideo && (
+          <div className="videoModal" onClick={() => setExpandedVideo(null)}>
+            <div className="galleryWrapper" onClick={(e) => e.stopPropagation()}>
+              <button className="closeVideo" onClick={() => setExpandedVideo(null)}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+              <div className="galleryImages">
+                {projectsData.find(p => p.id === expandedVideo)?.images?.map((img, idx) => (
+                  <img key={idx} src={img} alt={`Imagem ${idx + 1}`} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* CTA Section */}

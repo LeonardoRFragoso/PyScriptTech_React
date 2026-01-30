@@ -527,8 +527,48 @@
 }
 
 .videoModal .closeVideo {
-  top: -50px;
-  right: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.videoModal .closeVideo:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.galleryWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: rgba(20, 20, 30, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.galleryImages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.galleryImages img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ==================== CTA SECTION ==================== */
