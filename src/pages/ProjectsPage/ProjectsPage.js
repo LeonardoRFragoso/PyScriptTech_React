@@ -154,6 +154,18 @@ const projectsData = [
     image: '/images/não-conformidade/1.jpg',
     images: ['/images/não-conformidade/1.jpg', '/images/não-conformidade/2.jpg', '/images/não-conformidade/3.jpg', '/images/não-conformidade/4.jpg'],
     featured: false
+  },
+  {
+    id: 13,
+    title: 'GNLink',
+    subtitle: 'Sistema de Gestão de Links',
+    description: 'Plataforma para gerenciamento e encurtamento de links. Sistema de rastreamento de cliques, analytics de acesso e organização de URLs por categorias.',
+    category: 'software',
+    technologies: ['Python', 'React', 'PostgreSQL', 'REST API'],
+    results: ['Gerenciamento centralizado de links', 'Analytics de acessos'],
+    image: '/images/GNLink/1.png',
+    images: ['/images/GNLink/1.png', '/images/GNLink/2.png', '/images/GNLink/3.png', '/images/GNLink/4.png', '/images/GNLink/5.png', '/images/GNLink/6.png', '/images/GNLink/7.png', '/images/GNLink/8.png'],
+    featured: false
   }
 ];
 
