@@ -32,8 +32,8 @@ const FeaturedProjects = () => {
     },
     {
       id: 3,
-      title: 'TVs ICTSI',
-      description: 'Sistema de displays digitais para o Porto do Rio de Janeiro com exibição em tempo real.',
+      title: 'TVs Corporativas',
+      description: 'Sistema de displays digitais para operações portuárias com exibição em tempo real.',
       category: 'Enterprise',
       technologies: ['Python', 'React', 'WebSockets'],
       results: ['Displays em tempo real', 'Gestão centralizada'],

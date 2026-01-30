@@ -42,7 +42,7 @@ const projectsData = [
     technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Grafana'],
     results: ['Monitoramento em tempo real', 'Solução enterprise para observabilidade'],
     image: '/images/APM/APM1.png',
-    images: ['/images/APM/APM1.png', '/images/APM/APM2.png', '/images/APM/APM3.png', '/images/APM/APM4.png', '/images/APM/APM5.png'],
+    images: ['/images/APM/APM1.png', '/images/APM/APM2.png', '/images/APM/APM3.png', '/images/APM/APM4.png', '/images/APM/APM5.png', '/images/APM/APM6.png', '/images/APM/APM7.png'],
     featured: false,
     githubUrl: 'https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs'
   },
@@ -68,7 +68,7 @@ const projectsData = [
     technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
     results: ['Gestão completa de pacientes', 'Prontuário eletrônico integrado'],
     image: `${process.env.PUBLIC_URL}/images/medflow/medflow1.png`,
-    images: [`${process.env.PUBLIC_URL}/images/medflow/medflow1.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow2.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow3.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow4.png`],
+    images: [`${process.env.PUBLIC_URL}/images/medflow/medflow1.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow2.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow3.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow4.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow5.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow6.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow7.png`, `${process.env.PUBLIC_URL}/images/medflow/medflow8.png`],
     featured: true
   },
   {
@@ -80,7 +80,7 @@ const projectsData = [
     technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe API'],
     results: ['Multi-tenant architecture', 'Billing automatizado'],
     image: '/images/SaaS/1SaaS - 1.png',
-    images: ['/images/SaaS/1SaaS - 1.png', '/images/SaaS/1SaaS - 2.png', '/images/SaaS/1SaaS - 3.png', '/images/SaaS/1SaaS - 4.png'],
+    images: ['/images/SaaS/1SaaS - 1.png', '/images/SaaS/1SaaS - 2.png', '/images/SaaS/1SaaS - 3.png', '/images/SaaS/1SaaS - 4.png', '/images/SaaS/1SaaS - 5.png', '/images/SaaS/1SaaS - 6.png', '/images/SaaS/1SaaS - 7.png'],
     featured: false
   },
   {
@@ -92,7 +92,7 @@ const projectsData = [
     technologies: ['Python', 'Streamlit', 'Pandas', 'Plotly'],
     results: ['Visualização de dados em tempo real', 'Relatórios automatizados'],
     image: `${process.env.PUBLIC_URL}/images/dash-multas/1.jpg`,
-    images: [`${process.env.PUBLIC_URL}/images/dash-multas/1.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/2.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/3.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/4.jpg`],
+    images: [`${process.env.PUBLIC_URL}/images/dash-multas/1.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/2.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/3.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/4.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/5.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/6.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/7.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/8.jpg`, `${process.env.PUBLIC_URL}/images/dash-multas/9.jpg`],
     featured: false
   },
   {
@@ -104,19 +104,19 @@ const projectsData = [
     technologies: ['Python', 'Flask', 'SQLite', 'JavaScript'],
     results: ['Controle de veículos em tempo real', 'Otimização de operações'],
     image: '/images/Pátio/1.jpg',
-    images: ['/images/Pátio/1.jpg', '/images/Pátio/2.jpg', '/images/Pátio/3.jpg', '/images/Pátio/4.jpg'],
+    images: ['/images/Pátio/1.jpg', '/images/Pátio/2.jpg', '/images/Pátio/3.jpg', '/images/Pátio/4.jpg', '/images/Pátio/5.jpg', '/images/Pátio/6.jpg'],
     featured: false
   },
   {
     id: 9,
-    title: 'TVs ICTSI',
+    title: 'TVs Corporativas',
     subtitle: 'Sistema de Display Digital',
-    description: 'Sistema de gerenciamento de displays digitais para o Porto do Rio de Janeiro. Exibição de informações operacionais, dashboards e comunicação interna em tempo real.',
+    description: 'Sistema de gerenciamento de displays digitais para operações portuárias. Exibição de informações operacionais, dashboards e comunicação interna em tempo real.',
     category: 'enterprise',
     technologies: ['Python', 'React', 'WebSockets', 'PostgreSQL'],
     results: ['Displays em tempo real', 'Gestão centralizada'],
     image: `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/1.jpg`,
-    images: [`${process.env.PUBLIC_URL}/images/Tvs-ICTSI/1.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/2.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/3.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/4.jpg`],
+    images: [`${process.env.PUBLIC_URL}/images/Tvs-ICTSI/1.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/2.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/3.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/4.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/5.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/6.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/7.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/8.jpg`, `${process.env.PUBLIC_URL}/images/Tvs-ICTSI/9.jpg`],
     featured: true
   },
   {
@@ -128,7 +128,7 @@ const projectsData = [
     technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
     results: ['Gestão integrada de recursos', 'KPIs em tempo real'],
     image: '/images/GR/1.jpg',
-    images: ['/images/GR/1.jpg', '/images/GR/2.jpg', '/images/GR/3.jpg', '/images/GR/4.jpg'],
+    images: ['/images/GR/1.jpg', '/images/GR/2.jpg', '/images/GR/3.jpg', '/images/GR/4.jpg', '/images/GR/5.jpg', '/images/GR/6.jpg', '/images/GR/7.jpg', '/images/GR/8.jpg', '/images/GR/9.jpg', '/images/GR/10.jpg', '/images/GR/11.jpg', '/images/GR/12.jpg'],
     featured: false
   },
   {
@@ -140,7 +140,7 @@ const projectsData = [
     technologies: ['Python', 'Django', 'Bootstrap', 'PostgreSQL'],
     results: ['Gestão de contratos', 'Controle de estoque integrado'],
     image: '/images/Andaimes Pini/pini1.png',
-    images: ['/images/Andaimes Pini/pini1.png', '/images/Andaimes Pini/pini2.png', '/images/Andaimes Pini/pini3.png', '/images/Andaimes Pini/pini4.png'],
+    images: ['/images/Andaimes Pini/pini1.png', '/images/Andaimes Pini/pini2.png', '/images/Andaimes Pini/pini3.png', '/images/Andaimes Pini/pini4.png', '/images/Andaimes Pini/pini5.png', '/images/Andaimes Pini/Pini6.png', '/images/Andaimes Pini/Pini7.png', '/images/Andaimes Pini/pini8.png', '/images/Andaimes Pini/pini9.png', '/images/Andaimes Pini/Pini10.png', '/images/Andaimes Pini/pini11.png', '/images/Andaimes Pini/pini12.png', '/images/Andaimes Pini/pini13.png', '/images/Andaimes Pini/pini14.png', '/images/Andaimes Pini/pini15.png'],
     featured: false
   },
   {
@@ -152,7 +152,7 @@ const projectsData = [
     technologies: ['Python', 'Flask', 'SQLite', 'JavaScript'],
     results: ['Gestão de qualidade ISO', 'Workflow automatizado'],
     image: '/images/não-conformidade/1.jpg',
-    images: ['/images/não-conformidade/1.jpg', '/images/não-conformidade/2.jpg', '/images/não-conformidade/3.jpg', '/images/não-conformidade/4.jpg'],
+    images: ['/images/não-conformidade/1.jpg', '/images/não-conformidade/2.jpg', '/images/não-conformidade/3.jpg', '/images/não-conformidade/4.jpg', '/images/não-conformidade/5.jpg', '/images/não-conformidade/6.jpg', '/images/não-conformidade/7.jpg', '/images/não-conformidade/8.jpg'],
     featured: false
   },
   {

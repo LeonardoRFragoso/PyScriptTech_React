@@ -165,7 +165,7 @@ const faqData = [
   },
   {
     question: "Vocês trabalham com empresas de qual porte?",
-    answer: "Atendemos desde startups e pequenas empresas até grandes corporações. Nosso portfólio inclui projetos para o Porto do Rio de Janeiro (ICTSI), e-commerces de médio porte, além de sistemas internos para empresas de diversos setores. Cada projeto recebe atenção personalizada independente do tamanho."
+    answer: "Atendemos desde startups e pequenas empresas até grandes corporações. Nosso portfólio inclui projetos para operações portuárias, e-commerces de médio porte, além de sistemas internos para empresas de diversos setores. Cada projeto recebe atenção personalizada independente do tamanho."
   },
 ];
 
